@@ -1,0 +1,1 @@
+console.log("Match creation script loaded.");
