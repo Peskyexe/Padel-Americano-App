@@ -12,59 +12,63 @@
     <script src="./scripts/utilities/drop_down.js" defer></script>
 </head>
 <body>
+    <div class="modal-overlay">
     <div class="match-creation-container">
-        <div>
-            <h4>Padel Americano</h4>
-            <h1>Match Creation</h1>
+            <div>
+                <h4>Padel Americano</h4>
+                <h1>Match Creation</h1>
+            </div>
+            <form id="match-creation-form">
+                <div style="grid-area: left;">
+                    <label for="player-1-input" id="player-input-label">Players</label>
+                    <div class="player-input">
+                        <input type="text" id="player-1-input" name="player-1" placeholder="Player 1">
+                        <input type="text" id="player-2-input" name="player-2" placeholder="Player 2">
+                        <input type="text" id="player-3-input" name="player-3" placeholder="Player 3">
+                        <input type="text" id="player-4-input" name="player-4" placeholder="Player 4">
+                    </div>
+                    <div>
+                        <label for="court-amount-input">Courts</label>
+                        <input type="range" id="court-amount-input" name="court-amount-input" min="1" max="8" value="1">
+                    </div>
+                </div>
+                <div style="grid-area: right;">
+                    <div>
+                        <label for="match-display-name-input">Match name</label>
+                        <input type="text" id="match-display-name-input" name="match-display-name-input" placeholder="Match name">
+                    </div>
+                    <div>
+                        <label for="team-creation-method-input">Team creation method</label>
+                        <div class="dropdown-wrapper" id="team-creation-method-input">
+                            <div class="dropdown-button">
+                                <span class="dropdown-selected-item">Method</span>
+                                <span><i class="fa-solid fa-caret-up"></i></span>
+                            </div>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-item dropdown-active">Americano</div>
+                                <div class="dropdown-item">Manual</div>
+                                <div class="dropdown-item">Random</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="points-to-play-input">Points</label>
+                        <div class="dropdown-wrapper" id="points-to-play-input">
+                            <div class="dropdown-button">
+                                <span class="dropdown-selected-item">Best of</span>
+                                <span><i class="fa-solid fa-caret-up"></i></span>
+                            </div>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-item dropdown-active">Best of 11</div>
+                                <div class="dropdown-item">Best of 21</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" style="grid-area: button;">Create Match</button>
+            </form>
         </div>
-        <form id="match-creation-form">
-            <div style="grid-area: left;">
-                <div class="player-input">
-                    <input type="text" id="player-1-input" name="player-1" placeholder="Player 1">
-                    <input type="text" id="player-2-input" name="player-2" placeholder="Player 2">
-                    <input type="text" id="player-3-input" name="player-3" placeholder="Player 3">
-                    <input type="text" id="player-4-input" name="player-4" placeholder="Player 4">
-                </div>
-                <div>
-                    <label for="court-amount-input">Courts</label>
-                    <input type="range" id="court-amount-input" name="court-amount-input" min="1" max="8" value="1">
-                </div>
-            </div>
-            <div style="grid-area: right;">
-                <div>
-                    <label for="match-display-name-input">Match name</label>
-                    <input type="text" id="match-display-name-input" name="match-display-name-input" placeholder="Match name">
-                </div>
-                <div>
-                    <label for="team-creation-method-input">Team Creation Method</label>
-                    <div class="dropdown-wrapper" id="team-creation-method-input">
-                        <div class="dropdown-button">
-                            <span class="dropdown-selected-item">Method</span>
-                            <span><i class="fa-solid fa-caret-up"></i></span>
-                        </div>
-                        <div class="dropdown-menu">
-                            <div class="dropdown-item dropdown-active">Americano</div>
-                            <div class="dropdown-item">Manual</div>
-                            <div class="dropdown-item">Random</div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <label for="points-to-play-input">Points</label>
-                    <div class="dropdown-wrapper" id="points-to-play-input">
-                        <div class="dropdown-button">
-                            <span class="dropdown-selected-item">Best of</span>
-                            <span><i class="fa-solid fa-caret-up"></i></span>
-                        </div>
-                        <div class="dropdown-menu">
-                            <div class="dropdown-item dropdown-active">Best of 11</div>
-                            <div class="dropdown-item">Best of 21</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button type="submit" style="grid-area: button;">Create Match</button>
-        </form>
     </div>
+    
 </body>
 </html>
