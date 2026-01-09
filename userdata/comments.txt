@@ -1,0 +1,42 @@
+*Beware of bad grammar*
+
+------------------------------
+------------------------------
+
+raw_match_data.json :
+
+matchName and and matchDisplayName is generated from the creation date and number of matches that day (at time of creation), but the display name can manually be changed by the player. 
+This wil not alter the name used by the database, but rather be used as a display name for UI stuff.
+
+creationDate and creationTime is taken when match is first created (before teams are given out, but after all settings such as roundsType{} and teamType{})
+
+roundsType{} describes what type of scoring the match's rounds uses.
+Players can choose between "Best of" or "First to", and can change the amount of points to play, with a custom range, or from a default set. 
+(the custom range will have an "internal" recommended range).
+"winBy2" determines wheter or not teams will have to win by 2 points, allowing the match to enter overtime.
+
+teamType{} describes what team size the match uses and what generates the match's teams.
+"type" determines if the rounds are gonna be 1v1 or 2v2.
+"style" determines what team generation engine the match will use. (eg. Americano, Random, Manual)
+
+players[] is and unorderd list of the players in the match. The max amount of players is 24.
+
+"amountOfCourts" determines how many courts the players will use when playing, this is set by the players at match creation.
+Players will be given a small range depending on numbers of players and what team type the match uses.
+So for 2v2:
+[4-8>   Will only be allowed 1 court. (Removing the players option to set the amount of courts)
+[8-12>  Will be allowed between 2 and 3 courts.
+[13-16> Will only be allowed 3 courts. (Removing the option)
+[16     Will be allowed between 3 and 4 courts.
+[20     Will only be allowed 5 courts. (Removing the option)
+[24     Will only be allowed 6 courts. (Removing the option)
+And for 1v1:
+[2-4>   Will only be allowed 1 court. (Removing the option)
+[4-6>   Will be allowed between 2 and 3 courts.
+
+
+------------------------------
+
+match_data.json :
+
+perPlayerStats{} is calculated from raw_match_data roundInfo{} and is also ranked by index.
