@@ -4,16 +4,30 @@ console.log("Match creation script loaded.");
 const match_creation_form = document.getElementById("match-creation-form")
 match_creation_form.addEventListener("submit", startMatch)
 
+const match_cancel_button = document.getElementById("match-cancel-button")
+match_cancel_button.addEventListener("click", cancelMatchCreation)
+
+// Henter dagens dato og lager en streng representasjon av den
+const date = new Date();
+const date_as_string = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
+
+// Lager et objekt med dato data for eksportering
+const date_data = {
+    object: date,
+    dateString: date_as_string
+};
+
+// Nøkkel for localStorage for å holde styr på antall kamper i dag
+const storageKey = `matches_count_${date_as_string}`;
+
+export { date_data, storageKey };
+
 // Funksjon for når brukeren først lager kampen.
 function startMatch(event) {
     console.log("Starting match");
     event.preventDefault();
 
-    const date = new Date();
-    const date_as_string = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
-
     // Holder styr på hvor mange kamper som er laget i dag for å lage unike navn
-    const storageKey = `matches_count_${date_as_string}`;
     let total_matches_today = parseInt(localStorage.getItem(storageKey), 10) || 0;
     total_matches_today += 1;
     localStorage.setItem(storageKey, total_matches_today);
@@ -21,7 +35,7 @@ function startMatch(event) {
     // Display name: Hvis brukeren ikke har skrevet inn noe, lager vi et standard navn
     var match_display_name = document.getElementById("match-display-name-input").value;
     if (!match_display_name || match_display_name.trim() === "") {
-        match_display_name = `untitled_match_${date_as_string}_${total_matches_today}`;
+        match_display_name = document.getElementById("match-display-name-input").placeholder;
     }
 
     const creation_date = [date.getDate(), date.getMonth() + 1, date.getFullYear()];
@@ -65,4 +79,8 @@ function startMatch(event) {
 
     const raw_match_data_json = JSON.stringify(raw_match_data)
     console.log(raw_match_data_json)
+}
+
+function cancelMatchCreation() {
+    console.log("Match creation cancelled.");
 }

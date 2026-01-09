@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="./styles/match_creation.css">
     <link rel="stylesheet" href="./styles/dropdown.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="./scripts/match_creation/match_creation.js" defer></script>
+    <script src="./scripts/match_creation/match_creation.js" type="module" defer></script>
     <script src="./scripts/utilities/drop_down.js" defer></script>
+    <script src="./scripts/match_creation/dynamic_display_name.js" type="module" defer></script>
 </head>
 <body>
     <div class="modal-overlay">
-    <div class="match-creation-container">
+        <div class="match-creation-container">
             <div>
                 <h4>Padel Americano</h4>
                 <h1>Match Creation</h1>
@@ -38,7 +39,7 @@
                         <input type="text" id="match-display-name-input" name="match-display-name-input" placeholder="Match name">
                     </div>
                     <div>
-                        <label for="team-creation-method-input">Team creation method</label>
+                        <label>Team creation method</label>
                         <div class="dropdown-wrapper" id="team-creation-method-input">
                             <div class="dropdown-button">
                                 <span class="dropdown-selected-item">Method</span>
@@ -52,7 +53,7 @@
                         </div>
                     </div>
                     <div>
-                        <label for="points-to-play-input">Points</label>
+                        <label>Points</label>
                         <div class="dropdown-wrapper" id="points-to-play-input">
                             <div class="dropdown-button">
                                 <span class="dropdown-selected-item">Best of</span>
@@ -65,10 +66,16 @@
                         </div>
                     </div>
                 </div>
-                <button type="submit" style="grid-area: button;">Create Match</button>
+                <div class="match-creation-buttons" style="grid-area: buttons;">
+                    <div>
+                        <button type="submit" style="grid-area: button-1;">Create Match</button>
+                    </div>
+                    <div>
+                        <button type="reset" id="match-cancel-button" style="grid-area: button-2;">Cancel</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
-    
 </body>
 </html>
