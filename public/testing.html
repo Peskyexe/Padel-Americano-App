@@ -4,27 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Padel Americano Testing</title>
-    <link rel="stylesheet" href="./styles/testing.css">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/match_creation.css">
+    <link rel="stylesheet" href="./styles/dropdown.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="./scripts/match_creation.js" defer></script>
+    <script src="./scripts/drop_down.js" defer></script>
 </head>
 <body>
-    <div>
-        <form action="">
-            <input type="text" id="player-1-input" name="player-1" placeholder="Player 1">
-            <input type="text" id="player-2-input" name="player-2" placeholder="Player 2">
-            <input type="text" id="player-3-input" name="player-3" placeholder="Player 3">
-            <input type="text" id="player-4-input" name="player-4" placeholder="Player 4">
-            <input type="text" id="match-display-name" name="match-display-name" placeholder="Match Name">
-            <select name="team-creation-engine" id="team-creation-engine-input">
-                <option value="manual">Manual</option>
-                <option value="random">Random</option>
-                <option value="americano" selected>Americano</option>
-            </select>
-            <select name="points-to-play" id="points-to-play-input">
-                <option value="11">11</option>
-                <option value="21">21</option>
-            </select>
-            <button type="submit">Create Match</button>
+    <div class="match-creation-container">
+        <form action="" id="match-creation-form">
+            <div style="grid-area: left;">
+                <div class="player-input">
+                    <input type="text" id="player-1-input" name="player-1" placeholder="Player 1">
+                    <input type="text" id="player-2-input" name="player-2" placeholder="Player 2">
+                    <input type="text" id="player-3-input" name="player-3" placeholder="Player 3">
+                    <input type="text" id="player-4-input" name="player-4" placeholder="Player 4">
+                </div>
+                <div>
+                    <label for="court-amount-input">Courts</label>
+                    <input type="range" id="court-amount-input" name="court-amount-input" min="1" max="8" value="1">
+                </div>
+            </div>
+            <div style="grid-area: right;">
+                <div>
+                    <label for="match-display-name-input">Match name</label>
+                    <input type="text" id="match-display-name-input" name="match-display-name-input" placeholder="Match name">
+                </div>
+                <div>
+                    <label for="team-creation-method-input">Team Creation Method</label>
+                    <select name="team-creation-method" id="team-creation-method-input" class="select">
+                        <option value="americano" selected>Americano</option>
+                        <option value="manual">Manual</option>
+                        <option value="random">Random</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="points-to-play-input">Points</label>
+                    <select name="points-to-play" id="points-to-play-input" class="select">
+                        <option value="11">Best of 11</option>
+                        <option value="21">Best of 21</option>
+                    </select>
+                </div>
+                <div>
+                    <div class="dropdown-wrapper">
+                        <div class="dropdown-button">
+                            <span id="dropdown-selected-item">Method</span>
+                            <span><i class="fa-solid fa-caret-up"></i></span>
+                        </div>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-item dropdown-active">Americano</div>
+                            <div class="dropdown-item">Manual</div>
+                            <div class="dropdown-item">Random</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" style="grid-area: button;">Create Match</button>
         </form>
     </div>
 </body>

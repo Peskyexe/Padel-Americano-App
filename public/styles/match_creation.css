@@ -1,0 +1,134 @@
+.match-creation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    padding: 2em 2.5em;
+    border-radius: 2em;
+    background-color: var(--bg);
+    width: auto;
+    height: auto;
+}
+
+.match-creation-container form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+    "left right"
+    "button button";
+    gap: 2em;
+    width: 100%;
+}
+
+.match-creation-container form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+    background-color: var(--bg-light);
+    padding: 1em 1.5em;
+    border-radius: 1.5em;
+}
+
+.match-creation-container .player-input {
+    background-color: var(--bg-lighter);
+    padding: 0.75em;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.match-creation-container input {
+    padding: 0.25em 0.75em;
+    border-radius: 0.5em;
+    border: 3px solid var(--text);
+    width: 100%;
+    font-size: 1.125em;
+    color: var(--bg);
+    background-color: var(--text);
+    transition: 0.2s ease;
+}
+
+.match-creation-container input:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.match-creation-container input:focus {
+    outline: none;
+    border-color: white;
+    background-color: var(--primary);
+}
+
+.match-creation-container select {
+    padding: 0.25em 0.75em;
+    border-radius: 0.5em;
+    border: 3px solid var(--text);
+    appearance: none;
+    width: 100%;
+    font-size: 1.125em;
+    color: var(--bg);
+    background-color: var(--text);
+    transition: border-color 0.2s ease;
+    transition: background-color 0.2s ease;
+}
+
+.match-creation-container select:hover {
+    border-color: var(--secondary);
+    appearance: none;
+    outline: none;
+}
+.match-creation-container select:focus {
+    outline: none;
+}
+.match-creation-container .select:open {
+    outline: none;
+    border-color: var(--secondary);
+    background-color: white;
+    color: var(--bg-dark);
+    border-radius: 0.5em 0.5em 0 0;
+    border-bottom: 2px solid white;
+}
+
+.match-creation-container option {
+    background-color: white;
+    color: var(--bg-lighter);
+    transition: 0.2s ease;
+}
+
+.match-creation-container select > :last-child {
+    border-radius: 0 0 0.5em 0.5em;
+}
+
+.match-creation-container button {
+    padding: 0.5em 0.75em;
+    border-radius: 0.75em;
+    background-color: var(--primary);
+    border: none;
+    font-weight: bold;
+    font-size: 1.125em;
+    transition: 0.2s ease;
+}
+
+.match-creation-container label {
+    font-weight: bold;
+    font-size: 1.125em;
+}
+
+.match-creation-container div:has(>label) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+}
+
+.match-creation-container button:hover {
+    background-color: var(--secondary);
+}
+.match-creation-container button:active {
+    background-color: var(--primary);
+}

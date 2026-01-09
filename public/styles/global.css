@@ -1,0 +1,39 @@
+/* Importerer "Manrope" fonten fra Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Farge og utility variabler, generert med denne nettsiden: https://www.iamsajid.com/ui-colors/ */
+:root {
+    --bg-dark: oklch(0.1 0.03 264);
+    --bg: oklch(0.15 0.03 264);
+    --bg-light: oklch(0.2 0.03 264);
+    --bg-lighter: oklch(0.25 0.03 264);
+    --text: oklch(0.96 0.06 264);
+    --text-muted: oklch(0.76 0.06 264);
+    --highlight: oklch(0.5 0.06 264);
+    --border: oklch(0.4 0.06 264);
+    --border-muted: oklch(0.3 0.06 264);
+    --primary: oklch(0.76 0.1 264);
+    --secondary: oklch(0.76 0.1 84);
+    --danger: oklch(0.7 0.06 30);
+    --warning: oklch(0.7 0.06 100);
+    --success: oklch(0.7 0.06 160);
+    --info: oklch(0.7 0.06 260);
+
+    --gradient: linear-gradient(0deg, var(--bg) 97%, var(--bg-light));
+    --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+    --shadow: 0px 2px 2px oklch(0 0 0 / 0.2), 0px 4px 4px oklch(0 0 0 / 0.1);
+}
+
+/* Resetter alt sin padding og margin til null + bytter box-sizing til border box. Hjelper med konsistens. Endrer også fånt å tekst farge till alle elementene */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Manrope', sans-serif;
+    color: var(--text);
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+}

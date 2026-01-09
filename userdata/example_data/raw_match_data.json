@@ -3,16 +3,21 @@
         "1/3/2026_1": {
             "matchName": "1/3/2026_1",
             "matchDisplayName": "untitled_match_1/3/2026_1",
-            "creationDate": "1/3/2026",
+            "creationDate": {
+                "day": "3",
+                "month": "1",
+                "year": "2026"
+            },
+            "creationDateString": "3/1/2026",
             "creationTime": "12:03",
             "pointsToPlay": 11,
             "teamCreationMethod": "Americano",
-            "players": [
-                "Jørgen",
-                "Sander",
-                "Pål",
-                "Vebjørn"
-            ],
+            "players": {
+                "player_1": "Jørgen",
+                "player_2": "Sander",
+                "player_3": "Pål",
+                "player_4": "Vebjørn"
+            },
             "amountOfCourts": 1,
             "roundInfo": {
                 "round_1": {
