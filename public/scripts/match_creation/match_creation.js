@@ -30,8 +30,8 @@ function startMatch(event) {
     const pad = (n) => n.toString().padStart(2, '0');
     const creation_time = `${pad(date.getHours())}:${pad(date.getMinutes())}`;
 
-    const points_to_play = document.getElementById("points-to-play-input");
-    const team_creation_method = document.getElementById("team-creation-method-input");
+    const points_to_play = document.querySelector("#points-to-play-input .dropdown-selected-item");
+    const team_creation_method = document.querySelector("#team-creation-method-input .dropdown-selected-item");
     const players = document.querySelectorAll(".player-input input");
 
     // Lager et objekt med spillerne
@@ -57,8 +57,8 @@ function startMatch(event) {
         creationDate: creation_date,
         creationDateString: date_as_string,
         creationTime: creation_time,
-        pointsToPlay: points_to_play.value,
-        teamCreationMethod: team_creation_method.value,
+        pointsToPlay: points_to_play.innerText,
+        teamCreationMethod: team_creation_method.innerText,
         players: players_object,
         amountOfCourts: amount_of_courts
     }

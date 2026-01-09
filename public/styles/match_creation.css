@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 3em;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -12,6 +13,17 @@
     background-color: var(--bg);
     width: auto;
     height: auto;
+}
+
+.match-creation-container > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.match-creation-container h4 {
+    color: var(--text-muted);
 }
 
 .match-creation-container form {
@@ -54,56 +66,17 @@
     transition: 0.2s ease;
 }
 
+/* Interaktive effekter for alle inputs på siden */
 .match-creation-container input:hover {
     background-color: var(--primary);
     border-color: var(--primary);
 }
-
 .match-creation-container input:focus {
     outline: none;
-    border-color: white;
+    border-color: var(--text);
     background-color: var(--primary);
 }
 
-.match-creation-container select {
-    padding: 0.25em 0.75em;
-    border-radius: 0.5em;
-    border: 3px solid var(--text);
-    appearance: none;
-    width: 100%;
-    font-size: 1.125em;
-    color: var(--bg);
-    background-color: var(--text);
-    transition: border-color 0.2s ease;
-    transition: background-color 0.2s ease;
-}
-
-.match-creation-container select:hover {
-    border-color: var(--secondary);
-    appearance: none;
-    outline: none;
-}
-.match-creation-container select:focus {
-    outline: none;
-}
-.match-creation-container .select:open {
-    outline: none;
-    border-color: var(--secondary);
-    background-color: white;
-    color: var(--bg-dark);
-    border-radius: 0.5em 0.5em 0 0;
-    border-bottom: 2px solid white;
-}
-
-.match-creation-container option {
-    background-color: white;
-    color: var(--bg-lighter);
-    transition: 0.2s ease;
-}
-
-.match-creation-container select > :last-child {
-    border-radius: 0 0 0.5em 0.5em;
-}
 
 .match-creation-container button {
     padding: 0.5em 0.75em;
@@ -126,6 +99,7 @@
     gap: 0.25em;
 }
 
+/* Interaktive effekter for alle knapper på siden */
 .match-creation-container button:hover {
     background-color: var(--secondary);
 }

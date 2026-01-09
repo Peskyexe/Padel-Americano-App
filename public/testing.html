@@ -8,12 +8,16 @@
     <link rel="stylesheet" href="./styles/match_creation.css">
     <link rel="stylesheet" href="./styles/dropdown.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="./scripts/match_creation.js" defer></script>
-    <script src="./scripts/drop_down.js" defer></script>
+    <script src="./scripts/match_creation/match_creation.js" defer></script>
+    <script src="./scripts/utilities/drop_down.js" defer></script>
 </head>
 <body>
     <div class="match-creation-container">
-        <form action="" id="match-creation-form">
+        <div>
+            <h4>Padel Americano</h4>
+            <h1>Match Creation</h1>
+        </div>
+        <form id="match-creation-form">
             <div style="grid-area: left;">
                 <div class="player-input">
                     <input type="text" id="player-1-input" name="player-1" placeholder="Player 1">
@@ -33,29 +37,28 @@
                 </div>
                 <div>
                     <label for="team-creation-method-input">Team Creation Method</label>
-                    <select name="team-creation-method" id="team-creation-method-input" class="select">
-                        <option value="americano" selected>Americano</option>
-                        <option value="manual">Manual</option>
-                        <option value="random">Random</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="points-to-play-input">Points</label>
-                    <select name="points-to-play" id="points-to-play-input" class="select">
-                        <option value="11">Best of 11</option>
-                        <option value="21">Best of 21</option>
-                    </select>
-                </div>
-                <div>
-                    <div class="dropdown-wrapper">
+                    <div class="dropdown-wrapper" id="team-creation-method-input">
                         <div class="dropdown-button">
-                            <span id="dropdown-selected-item">Method</span>
+                            <span class="dropdown-selected-item">Method</span>
                             <span><i class="fa-solid fa-caret-up"></i></span>
                         </div>
                         <div class="dropdown-menu">
                             <div class="dropdown-item dropdown-active">Americano</div>
                             <div class="dropdown-item">Manual</div>
                             <div class="dropdown-item">Random</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <label for="points-to-play-input">Points</label>
+                    <div class="dropdown-wrapper" id="points-to-play-input">
+                        <div class="dropdown-button">
+                            <span class="dropdown-selected-item">Best of</span>
+                            <span><i class="fa-solid fa-caret-up"></i></span>
+                        </div>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-item dropdown-active">Best of 11</div>
+                            <div class="dropdown-item">Best of 21</div>
                         </div>
                     </div>
                 </div>
