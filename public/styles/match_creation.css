@@ -43,7 +43,7 @@
     border-radius: 1.5em;
 }
 
-.match-creation-container .player-input {
+.match-creation-container .player-inputs {
     background-color: var(--bg-lighter);
     padding: 0.75em;
     border-radius: 1em;
@@ -52,11 +52,7 @@
     gap: 0.5em;
 }
 
-#player-input-label {
-    padding-left: 0.75em;
-}
-
-.match-creation-container input {
+.match-creation-container input[type="text"] {
     padding: 0.25em 0.75em;
     border-radius: 0.5em;
     border: 3px solid var(--text);
@@ -67,33 +63,24 @@
     transition: 0.2s ease;
 }
 
-/* Interaktive effekter for alle inputs på siden */
-.match-creation-container input:hover {
+/* Interaktive effekter for alle text inputs på siden */
+.match-creation-container input[type="text"]:hover {
     background-color: var(--primary);
     border-color: var(--primary);
 }
-.match-creation-container input:focus {
+.match-creation-container input[type="text"]:focus {
     outline: none;
     border-color: var(--text);
     background-color: var(--primary);
 }
 
-.match-creation-container button {
-    padding: 0.5em 0.75em;
-    border-radius: 0.75em;
-    background-color: var(--primary);
-    border: none;
-    font-weight: bold;
-    font-size: 1.125em;
-    transition: 0.1s ease;
+#player-amount-input {
+    margin-bottom: 0.25em;
+    margin-top: 0.5em;
 }
 
-/* Interaktive effekter for alle knapper på siden */
-.match-creation-container button:hover {
-    background-color: var(--secondary);
-}
-.match-creation-container button:active {
-    background-color: var(--primary);
+.match-creation-container div:has(>#court-amount-input) {
+    width: 50%;
 }
 
 .match-creation-container label {
@@ -114,6 +101,23 @@
     gap: 0.75em;
 }
 
+.match-creation-container button {
+    padding: 0.5em 0.75em;
+    border-radius: 0.75em;
+    background-color: var(--primary);
+    border: none;
+    font-weight: bold;
+    font-size: 1.125em;
+    transition: 0.1s ease;
+}
+
+/* Interaktive effekter for alle knapper på siden */
+.match-creation-container button:hover {
+    background-color: var(--secondary);
+}
+.match-creation-container button:active {
+    background-color: var(--primary);
+}
 .match-creation-buttons button {
     width: 100%;
 }
@@ -146,7 +150,7 @@
 
 /* Endrer player input layen til full vertikal */
 @media (max-width: 850px) {
-    .match-creation-container .player-input {
+    .match-creation-container .player-inputs {
     grid-template-columns: 1fr;
     }
 
@@ -160,7 +164,7 @@
 @media (max-width: 600px) {
     .match-creation-container form {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr auto;
+    grid-template-rows: auto 1fr auto;
     grid-template-areas:
     "right"
     "left"
