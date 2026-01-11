@@ -25,7 +25,7 @@
 
 .match-creation-container form {
     display: grid;
-    grid-template-columns: 2fr 300px;
+    grid-template-columns: 2fr 325px;
     grid-template-rows: 1fr auto;
     grid-template-areas:
     "left right"
@@ -43,15 +43,22 @@
     border-radius: 1.5em;
 }
 
-.match-creation-container .player-inputs {
+.match-creation-container .player-inputs-container {
     background-color: var(--bg-lighter);
     padding: 0.75em;
     border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.match-creation-container .player-inputs {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5em;
 }
 
+/* Standard styling for alle tekst input felter i match creation modalen */
 .match-creation-container input[type="text"] {
     padding: 0.25em 0.75em;
     border-radius: 0.5em;
@@ -62,8 +69,7 @@
     background-color: var(--text);
     transition: 0.2s ease;
 }
-
-/* Interaktive effekter for alle text inputs på siden */
+/* Interaktive effekter for alle text inputs i match creation modalen */
 .match-creation-container input[type="text"]:hover {
     background-color: var(--primary);
     border-color: var(--primary);
@@ -72,11 +78,6 @@
     outline: none;
     border-color: var(--text);
     background-color: var(--primary);
-}
-
-#player-amount-input {
-    margin-bottom: 0.25em;
-    margin-top: 0.5em;
 }
 
 .match-creation-container div:has(>#court-amount-input) {
@@ -94,13 +95,9 @@
     gap: 0.25em;
 }
 
-/* Posisjonering for "Create Match" og "Cancel" knappene */
-.match-creation-container .match-creation-buttons {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 0.75em;
-}
 
+
+/* Standard styling for alle knapper i match creation modalen */
 .match-creation-container button {
     padding: 0.5em 0.75em;
     border-radius: 0.75em;
@@ -109,23 +106,39 @@
     font-weight: bold;
     font-size: 1.125em;
     transition: 0.1s ease;
+    width: 100%;
 }
-
-/* Interaktive effekter for alle knapper på siden */
+/* Interaktive effekter for alle knapper i match creation modalen */
 .match-creation-container button:hover {
     background-color: var(--secondary);
 }
 .match-creation-container button:active {
     background-color: var(--primary);
 }
-.match-creation-buttons button {
-    width: 100%;
+
+/* Posisjonering for "Create Match" og "Cancel" knappene */
+.match-creation-container .match-creation-buttons {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.75em;
 }
 
+/* Unik farge for "Create match" knappen */
+#match-create-button {
+    background-color: var(--success);
+}
+/* Interaktive effekts for "Create match" knappen */
+#match-create-button:hover {
+    background-color: var(--secondary);
+}
+#match-create-button:active {
+    background-color: var(--success);
+}
+
+/* Unik farge for "Cancel" knappen */
 #match-cancel-button {
     background-color: var(--danger);
 }
-
 /* Interaktive effekts for "Cancel" knappen */
 #match-cancel-button:hover {
     background-color: var(--secondary);
@@ -147,8 +160,7 @@
         min-width: 0;
     }
 }
-
-/* Endrer player input layen til full vertikal */
+/* Endrer player input layouten til full vertikal */
 @media (max-width: 850px) {
     .match-creation-container .player-inputs {
     grid-template-columns: 1fr;
@@ -159,15 +171,15 @@
         grid-template-rows: 1fr auto;
     }
 }
-
 /* Endrer hele layouten til full vertikal */
 @media (max-width: 600px) {
     .match-creation-container form {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr auto;
-    grid-template-areas:
-    "right"
-    "left"
-    "buttons";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+        "right"
+        "left"
+        "buttons";
+        gap: 1.25em;
     }
 }

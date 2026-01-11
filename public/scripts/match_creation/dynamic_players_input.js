@@ -2,10 +2,10 @@
 
 const player_amount_input = document.getElementById('player-amount-input');
 const player_inputs_container = document.querySelector('.player-inputs');
-const player_input_fields = player_inputs_container.querySelectorAll('input');
+const player_input_fields = player_inputs_container.querySelectorAll('input[type="text"]');
 
-const min_fields = 1;
-const max_fields = 100;
+const min_fields = 4;
+const max_fields = 24;
 
 // Sett minimum og maksimum antall spillere til slideren
 player_amount_input.min = min_fields;

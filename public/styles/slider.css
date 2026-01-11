@@ -1,48 +1,53 @@
 .slider-container {
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .slider {
     width: 100%;
-    -webkit-appearance: none;
     appearance: none;
-    height: 20px;
+    height: 10px;
+    border-radius: 1em;
     background: linear-gradient(90deg, oklch(0.96 0.06 264) 0%, oklch(0.45 0.06 264) 0%);
     outline: none;
-    transition: 0.2s ease;
-    border-radius: 1em;
+    margin-bottom: 4px;
+    margin-top: 3px;
 }
 
-
-/* .slider::-webkit-slider-thumb {
+/* Styler slider sirkel greia for alle nettlesere som bruker Webkit/Blink Engine (De aller fleste bruker denne) */
+.slider::-webkit-slider-thumb {
     appearance: none;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     border-radius: 100px;
     background-color: var(--primary);
     transition: 0.2s ease;
     cursor: pointer;
-} */
+}
+/* Interaktive effekter for slider sirkel greia */
+.slider::-webkit-slider-thumb:hover {
+    background-color: var(--secondary);
+}
 
-.slider::-webkit-slider-thumb {
+/* Styler slider sirkel greia for alle nettlesere som bruker Mozilla Engine (basically bare firefox). */
+.slider::-moz-range-thumb {
     appearance: none;
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;
     background-color: var(--primary);
     transition: 0.2s ease;
     cursor: pointer;
-    opacity: 0.5;
 }
-
-.slider::-webkit-slider-thumb:hover {
+/* Interakitve effekter for slider sirkel greia */
+.slider::-moz-range-thumb:hover {
     background-color: var(--secondary);
 }
 
 .slider-values-container {
     display: flex;
     justify-content: space-between;
-    padding: 0 2px;
 }
 
 .slider-values-container span {
@@ -50,18 +55,17 @@
     text-align: center;
 }
 
+/* Styler små verdiene under slideren, prøver å dra mere fokus til selve verdi teksten, istedet for min og max verdiene */
 .slider-min {
     color: var(--text-muted);
     font-weight: 200;
     font-size: 0.9em;
 }
-
 .slider-max {
     color: var(--text-muted);
     font-weight: 200;
     font-size: 0.9em;
 }
-
 .slider-value {
     font-weight: 500;
     font-size: 1.1em;

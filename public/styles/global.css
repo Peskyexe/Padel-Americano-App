@@ -38,6 +38,11 @@ body {
     background-color: var(--bg-dark);
 }
 
+/* Klasse for å "skru av" elementer */
+body .disabled {
+    display: none;
+}
+
 .modal-overlay {
     position: fixed;
     inset: 0;

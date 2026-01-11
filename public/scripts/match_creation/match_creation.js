@@ -1,9 +1,10 @@
-console.log("Match creation script loaded.");
+// Kode for å styre alt angående å starte en kamp
 
-// Henter in formen brukeren bruker til å start en kamp
+// Henter inn formen brukeren bruker til endre kampens innstilinger, legge til spillere og for å starte kampen
 const match_creation_form = document.getElementById("match-creation-form")
 match_creation_form.addEventListener("submit", startMatch)
 
+// Henter inn knappen som brukes til å kansellere kampen
 const match_cancel_button = document.getElementById("match-cancel-button")
 match_cancel_button.addEventListener("click", cancelMatchCreation)
 
@@ -20,6 +21,7 @@ const date_data = {
 // Nøkkel for localStorage for å holde styr på antall kamper i dag
 const storageKey = `matches_count_${date_as_string}`;
 
+// Eksporterer dato objektet og lokal lagrings nøkkelen
 export { date_data, storageKey };
 
 // Funksjon for når brukeren først lager kampen.
@@ -40,13 +42,14 @@ function startMatch(event) {
 
     const creation_date = [date.getDate(), date.getMonth() + 1, date.getFullYear()];
 
-    // Denne pad funksjonen sørger for at tid alltid har to siffer (f.eks. 09:05)
+    // Denne pad funksjonen sørger for at tid alltid har to siffer (f.eks. hvis tiden var 09:05, hadde den blit sånn: 9:5. Dette fikser pad funskjonen)
     const pad = (n) => n.toString().padStart(2, '0');
     const creation_time = `${pad(date.getHours())}:${pad(date.getMinutes())}`;
 
     const points_to_play = document.querySelector("#points-to-play-input .dropdown-selected-item");
-    const team_creation_method = document.querySelector("#team-creation-method-input .dropdown-selected-item");
+    const team_algorithm = document.querySelector("#team-algorithm-input .dropdown-selected-item");
     const players = document.querySelectorAll(".player-input input");
+    const amount_of_courts = document.getElementById("court-amount-input").value;
 
     // Lager et objekt med spillerne
     // Spillerene sitt navn blir enten det brukeren skrev inn, eller hvis det ikke ble skrevet noe inn, så bruker den placeholder-teksten
@@ -59,11 +62,6 @@ function startMatch(event) {
         });
     }
 
-    var amount_of_courts = document.getElementById("court-amount-input").value;
-    if (!amount_of_courts || amount_of_courts.trim() === "") {
-        amount_of_courts = Math.floor(players.length / 4);
-    }
-
     // Setter opp rådata for kampen
     const raw_match_data = {
         matchName: `${date_as_string}_${total_matches_today}`,
@@ -72,7 +70,7 @@ function startMatch(event) {
         creationDateString: date_as_string,
         creationTime: creation_time,
         pointsToPlay: points_to_play.innerText,
-        teamCreationMethod: team_creation_method.innerText,
+        teamCreationMethod: team_algorithm.innerText,
         players: players_object,
         amountOfCourts: amount_of_courts
     }

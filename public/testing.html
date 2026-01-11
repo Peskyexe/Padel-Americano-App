@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="./styles/match_creation.css">
     <script src="./scripts/match_creation/match_creation.js" type="module" defer></script>
     <script src="./scripts/match_creation/dynamic_display_name.js" type="module" defer></script>
-    <script src="./scripts/match_creation/dynamic_player_input.js" type="module" defer></script>
-    <script src="./scripts/match_creation/dynamic_court_slider.js" type="module" defer></script>
+    <script src="./scripts/match_creation/dynamic_players_input.js" type="module" defer></script>
+    <script src="./scripts/match_creation/dynamic_courts_input.js" type="module" defer></script>
     <!-- Font Awesome icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Dropdown -->
@@ -18,7 +18,7 @@
     <script src="./scripts/utilities/drop_down.js" defer></script>
     <!-- Slider -->
     <link rel="stylesheet" href="./styles/slider.css">
-    <script src="./scripts/utilities/slider.js" defer></script>
+    <script src="./scripts/utilities/slider.js" type="module" defer></script>
 </head>
 <body>
     <div class="modal-overlay">
@@ -29,9 +29,9 @@
             </div>
             <form id="match-creation-form">
                 <div style="grid-area: left;">
-                    <div>
-                        <label>Players</label>
-                        <div class="slider-container">
+                    <div class="player-inputs-container">
+                        <label style="grid-area: label;">Players</label>
+                        <div class="slider-container" style="grid-area: slider;">
                             <input type="range" class="slider" id="player-amount-input" name="player-amount-input" value="4">
                             <div class="slider-values-container">
                                 <span class="slider-min">4</span>
@@ -39,7 +39,6 @@
                                 <span class="slider-max">24</span>
                             </div>
                         </div>
-                        
                         <div class="player-inputs">
                             <input type="text" id="player-1-input" name="player-1" placeholder="Player 1">
                             <input type="text" id="player-2-input" name="player-2" placeholder="Player 2">
@@ -47,9 +46,9 @@
                             <input type="text" id="player-4-input" name="player-4" placeholder="Player 4">
                         </div>
                     </div>
-                    <div>
+                    <div class="court-amount-input-container">
                         <label>Courts</label>
-                        <div class="slider-container">
+                        <div class="slider-container disabled">
                             <input type="range" class="slider" id="court-amount-input" name="court-amount-input" min="1" max="1" value="1">
                             <div class="slider-values-container">
                                 <span class="slider-min" id="court-slider-min">1</span>
@@ -57,7 +56,7 @@
                                 <span class="slider-max" id="court-slider-max">2</span>
                             </div>
                         </div>
-                        
+                        <span id="court-amount-replacement-text">1</span>
                     </div>
                 </div>
                 <div style="grid-area: right;">
@@ -66,16 +65,16 @@
                         <input type="text" id="match-display-name-input" name="match-display-name-input" placeholder="Match name">
                     </div>
                     <div>
-                        <label>Team creation method</label>
-                        <div class="dropdown-wrapper" id="team-creation-method-input">
+                        <label>Team algorithm</label>
+                        <div class="dropdown-wrapper" id="team-algorithm-input">
                             <div class="dropdown-button">
-                                <span class="dropdown-selected-item">Method</span>
+                                <span class="dropdown-selected-item">Algorithm</span>
                                 <span><i class="fa-solid fa-caret-up"></i></span>
                             </div>
                             <div class="dropdown-menu">
                                 <div class="dropdown-item dropdown-active">Americano</div>
-                                <div class="dropdown-item">Manual</div>
                                 <div class="dropdown-item">Random</div>
+                                <div class="dropdown-item">Manual</div>
                             </div>
                         </div>
                     </div>
@@ -95,10 +94,10 @@
                 </div>
                 <div class="match-creation-buttons" style="grid-area: buttons;">
                     <div>
-                        <button type="submit" style="grid-area: button-1;">Create Match</button>
+                        <button type="submit" id="match-create-button">Create Match</button>
                     </div>
                     <div>
-                        <button type="reset" id="match-cancel-button" style="grid-area: button-2;">Cancel</button>
+                        <button type="reset" id="match-cancel-button">Cancel</button>
                     </div>
                 </div>
             </form>
