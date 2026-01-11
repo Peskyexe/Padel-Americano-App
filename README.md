@@ -1,4 +1,4 @@
 ﻿# Padel-Americano-App
 
-Web-app that allows you to create teams for four or more players (up to 24), and it works with multiple courts.
-You can see post-match stats and a match history.
+Web-applikasjon som lar deg lage/rulere lag for 4 eller flere spiller (opp til 24).
+Du kan se post-kamp stats og kamp historikken din.
