@@ -1,5 +1,7 @@
 // Kode for custom dropdown menyer
 
+const error_text_element = document.getElementById("error-text");
+
 // Initializerer en dropdown meny
 function initializeDropdown(wrapper) {
     const button = wrapper.querySelector('.dropdown-button');
@@ -13,6 +15,13 @@ function initializeDropdown(wrapper) {
         // Uten stopPropagation vil klikket også bli fanget opp av vinduets event listener, som lukker menyen med en gang
         event.stopPropagation();
         toggleMenu(menu, icon);
+
+        if (button.classList.contains("form-error")) {
+            menu.classList.add("form-error")
+            items.forEach(item => {
+                item.classList.add("form-error")
+            });
+        }
     });
 
     // Legger til event listeners på hvert menyvalg, som oppdaterer det valgte elementet når et valg blir trykket på
@@ -29,6 +38,16 @@ function initializeDropdown(wrapper) {
         // Legger til aktiv klassen på det nye valget
         event.target.classList.add('dropdown-active');
         closeMenu(menu, icon);
+
+        // Fjerner error klassene til alle meny elementene når noe blir valgt
+        if (button.classList.contains("form-error")) {
+            error_text_element.innerText = ""
+            button.classList.remove("form-error")
+            menu.classList.remove("form-error")
+            items.forEach(item => {
+                item.classList.remove("form-error")
+            });
+        }
     }));
 }
 

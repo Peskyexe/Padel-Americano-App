@@ -15,6 +15,7 @@
     --primary: oklch(0.76 0.1 264);
     --secondary: oklch(0.76 0.1 84);
     --danger: oklch(0.7 0.06 30);
+    --danger-muted: oklch(0.55 0.06 30);
     --warning: oklch(0.7 0.06 100);
     --success: oklch(0.7 0.06 160);
     --info: oklch(0.7 0.06 260);

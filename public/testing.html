@@ -8,6 +8,7 @@
     <!--  -->
     <link rel="stylesheet" href="./styles/match_creation.css">
     <script src="./scripts/match_creation/match_creation.js" type="module" defer></script>
+    <script src="./scripts/match_creation/match_creation_form_validation.js" type="module" defer></script>
     <script src="./scripts/match_creation/dynamic_display_name.js" type="module" defer></script>
     <script src="./scripts/match_creation/dynamic_players_input.js" type="module" defer></script>
     <script src="./scripts/match_creation/dynamic_courts_input.js" type="module" defer></script>
@@ -27,7 +28,7 @@
                 <h4>Padel Americano</h4>
                 <h1>Match Creation</h1>
             </div>
-            <form id="match-creation-form">
+            <form id="match-creation-form" autocomplete="off">
                 <div style="grid-area: left;">
                     <div class="player-inputs-container">
                         <label style="grid-area: label;">Players</label>
@@ -100,6 +101,7 @@
                         <button type="reset" id="match-cancel-button">Cancel</button>
                     </div>
                 </div>
+                <span id="error-text" style="grid-area: error-text;"></span>
             </form>
         </div>
     </div>

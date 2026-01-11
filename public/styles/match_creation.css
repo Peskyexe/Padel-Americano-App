@@ -4,7 +4,7 @@
     align-items: center;
     gap: 3em;
     z-index: 11;
-    padding: 2em 2.5em;
+    padding: 2em 2.5em 0 2.5em;
     border-radius: 2em;
     background-color: var(--bg);
     min-width: 1000px;
@@ -29,7 +29,8 @@
     grid-template-rows: 1fr auto;
     grid-template-areas:
     "left right"
-    "buttons buttons";
+    "buttons buttons"
+    "error-text error-text";
     gap: 2em;
     width: 100%;
 }
@@ -147,6 +148,34 @@
     background-color: var(--danger);
 }
 
+/* Noe små styling for error teksten på bunn av skjermen */
+#error-text {
+    color: var(--danger);
+    text-align: center;
+}
+
+/* Styling til error klassen. Klassen er gitt til de inputsa som mangler */
+body .match-creation-container .form-error {
+    border-color: var(--danger);
+    background-color: var(--danger);
+    color: var(--bg-lighter);
+}
+/* Interaktive effekts til error klassen */
+body .match-creation-container .form-error:hover {
+    border-color: var(--danger-muted);
+    background-color: var(--danger-muted);
+}
+body .match-creation-container .form-error:focus {
+    border-color: var(--danger);
+    background-color: var(--danger-muted);
+}
+
+/* Små styling til placeholder teksten til error elementene */
+.form-error::placeholder {
+    color: var(--bg-lighter);
+    opacity: 0.7;
+}
+
 /* Gjør om modalen til full page, istedet for en popup */
 @media (max-width: 950px) {
     .modal-overlay {
@@ -179,7 +208,8 @@
         grid-template-areas:
         "right"
         "left"
-        "buttons";
+        "buttons"
+        "error-text";
         gap: 1.25em;
     }
 }
