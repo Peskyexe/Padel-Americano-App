@@ -10,7 +10,7 @@ app.use('/assets', express.static(path.join(__dirname, "assets")));
 
 // Home page route
 app.get("/", async (request, response) => {
-    response.send( await readFile(path.join(__dirname, "public", "home.html"), "utf8"));
+    response.send( await readFile(path.join(__dirname, "public", "testing.html"), "utf8"));
 });
 
 app.listen(process.env.PORT || 3000, () => {
