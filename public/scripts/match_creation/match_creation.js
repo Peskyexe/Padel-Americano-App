@@ -10,15 +10,19 @@ match_creation_form.addEventListener("submit", startMatch)
 const match_cancel_button = document.getElementById("match-cancel-button")
 match_cancel_button.addEventListener("click", cancelMatchCreation)
 
+// Variabel som skal hente in brukerens Id til når jeg vil legge til kontoer å sånt.
+const user_id = 0;
 
 // Henter dagens dato og lager en streng representasjon av den
 const date = new Date();
 const date_as_string = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`
+const date_as_string_clean = `${date.getDate()}${date.getMonth() + 1}${date.getFullYear()}`
 
 // Lager et objekt med dato data for eksportering
 const date_data = {
     object: date,
-    dateString: date_as_string
+    date_string: date_as_string,
+    date_string_clean: date_as_string_clean
 };
 
 // Nøkkel for localStorage for å holde styr på antall kamper i dag
@@ -63,8 +67,9 @@ function startMatch(event) {
 
     if (validateForm(players, team_algorithm, points_to_play) == false) {
         // Setter opp rådata for kampen
-        const raw_match_data = {
-            matchName: `${date_as_string}_${total_matches_today}`,
+        const match_creation_data = {
+            matchId: `${date_as_string_clean}${total_matches_today}`,
+            hostUserId: user_id,
             matchDisplayName: match_display_name,
             creationDate: creation_date,
             creationDateString: date_as_string,
@@ -79,11 +84,21 @@ function startMatch(event) {
         total_matches_today += 1;
         localStorage.setItem(storageKey, total_matches_today);
 
-        const raw_match_data_json = JSON.stringify(raw_match_data)
-        console.log(raw_match_data_json)
+        const match_creation_data_json = JSON.stringify(match_creation_data)
+        console.log(match_creation_data_json)
     }
 }
 
 function cancelMatchCreation() {
     console.log("Match creation cancelled.");
+}
+
+function saveMatchCreationData(json_data) {
+	fetch('/match_creation/submit', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: json_data
+	})
 }

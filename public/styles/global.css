@@ -44,6 +44,25 @@ body .disabled {
     display: none;
 }
 
+.grid-1 {
+    grid-area: box-1;
+}
+.grid-2 {
+    grid-area: box-2;
+}
+.grid-3 {
+    grid-area: box-3;
+}
+.grid-4 {
+    grid-area: box-4;
+}
+.grid-5 {
+    grid-area: box-5;
+}
+.grid-6 {
+    grid-area: box-6;
+}
+
 .modal-overlay {
     position: fixed;
     inset: 0;

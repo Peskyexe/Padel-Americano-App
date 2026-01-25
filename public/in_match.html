@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/global.css">
+    <title>Padel Americano | In match</title>
+    <!--  -->
+    <link rel="stylesheet" href="./styles/in_match.css">
+    <script src="./scripts/in_match/dynamic_points_sliders.js" type="module" defer></script>
+    <!-- Slider --> 
+    <link rel="stylesheet" href="./styles/slider.css">
+    <script src="./scripts/utilities/slider.js" type="module" defer></script>
+    <!-- Font Awesome icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="modal-overlay">
+        <div class="in-match-container">
+            <header>
+                <i class="fa-solid fa-chevron-left chevron-icon" id="chevron-left"></i>
+                <div>
+                    <h4>Padel Americano</h4>
+                    <h1>Round 1</h1>
+                </div>
+                <i class="fa-solid fa-chevron-right chevron-icon" id="chevron-right"></i>
+            </header>
+            <div class="teams-container">
+                <div id="team-1-container" class="grid-1 team-container">
+                    <h2 class="grid-1">Team 1</h2>
+                    <div class="grid-2 team-player-names">
+                        <span id="player-1-text">Jørgen</span>
+                        <span id="player-2-text">Alexander</span>
+                    </div>
+                </div>
+                <div id="teams-seperator-line" class="grid-2"></div>
+                <div id="team-2-container" class="grid-3 team-container">
+                    <h2 class="grid-1">Team 2</h2>
+                    <div class="grid-2 team-player-names">
+                        <span id="player-3-text">Daniel</span>
+                        <span id="player-4-text">Ole-Krisitan</span>
+                    </div>
+                </div>
+            </div>
+            <div class="inputs-container">
+                <div class="scores-container">
+                    <div class="team-score-input">
+                        <span>Team 1</span>
+                        <label>Points</label>
+                        <div class="slider-container" id="team-1-score-container" style="grid-area: slider;">
+                            <input type="range" class="slider" id="team-1-score-input" name="team-1-score" value="0" min="0" max="11">
+                            <div class="slider-values-container">
+                                <span class="slider-min">4</span>
+                                <span class="slider-value">4</span>
+                                <span class="slider-max">24</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-score-input">
+                        <span>Team 2</span>
+                        <label>Points</label>
+                        <div class="slider-container" id="team-2-score-container" style="grid-area: slider;">
+                            <input type="range" class="slider" id="team-2-score-input" name="team-1-score" value="0" min="0" max="11">
+                            <div class="slider-values-container">
+                                <span class="slider-min">4</span>
+                                <span class="slider-value">4</span>
+                                <span class="slider-max">24</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttons-container">
+                    <button id="next-round-button">Next Round</button>
+                    <button id="end-match-button">End Match</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

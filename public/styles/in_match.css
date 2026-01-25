@@ -1,0 +1,191 @@
+.in-match-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    z-index: 11;
+    padding: 2em 2.5em;
+    border-radius: 2em;
+    background-color: var(--bg);
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.in-match-container header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.chevron-icon {
+    font-size: 2em;
+    cursor: pointer;
+    transition: color 0.1s ease;
+}
+.chevron-icon:hover {
+    color: var(--secondary);
+}
+
+#chevron-left {
+    color: var(--bg-lighter);
+    cursor: default;
+}
+
+#chevron-right {
+    color: var(--bg-lighter);
+    cursor: default;
+}
+
+h4 {
+    color: var(--text-muted);
+}
+
+.teams-container {
+    background-color: var(--bg-light);
+    border-radius: 1.5em;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas: 
+    "box-1 box-2 box-3";
+    align-items: center;
+}
+
+.team-container {
+    padding: 3em 7em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    "box-1"
+    "box-2";
+    gap: 2em;
+}
+
+.team-container > * {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.team-player-names span {
+    color: var(--secondary);
+    font-size: 1.5em;
+    line-height: 1.5em;
+}
+
+/* Standard styling for alle tekst input felter i "In round" modalen */
+.in-match-container input[type="text"] {
+    padding: 0.25em 0.75em;
+    border-radius: 0.5em;
+    border: 3px solid var(--text);
+    width: 100%;
+    font-size: 1.125em;
+    color: var(--bg);
+    background-color: var(--text);
+    transition: 0.2s ease;
+}
+/* Interaktive effekter for alle text inputs i "In round" modalen */
+.in-match-container input[type="text"]:hover {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+.in-match-container input[type="text"]:focus {
+    outline: none;
+    border-color: var(--text);
+    background-color: var(--primary);
+}
+
+#teams-seperator-line {
+    width: 4px;
+    background-color: var(--border);
+    border-radius: 2px;
+    height: 95%;
+}
+
+.inputs-container {
+    background-color: var(--bg-light);
+    width: 100%;
+    padding: 1em 1.5em;
+    border-radius: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+}
+
+.scores-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75em;
+}
+
+.team-score-input{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.team-score-input{
+    background-color: var(--bg-lighter);
+    padding: 0.25em 1em;
+    border-radius: 1em;
+}
+
+.team-score-input > span {
+    line-height: 2.5em;
+    font-size: 1.25em;
+}
+
+.team-score-input > label {
+    line-height: 2em;
+    font-size: 1.125em;
+    font-weight: 300;
+}
+
+.buttons-container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.75em;
+}
+
+.in-match-container button {
+    padding: 0.5em 0.75em;
+    border-radius: 0.75em;
+    background-color: var(--primary);
+    border: none;
+    font-weight: bold;
+    font-size: 1.125em;
+    transition: 0.1s ease;
+}
+/* Interaktive effekter for alle knapper i match creation modalen */
+.in-match-container button:hover {
+    background-color: var(--secondary);
+}
+.in-match-container button:active {
+    background-color: var(--primary);
+}
+
+/* Unik farge for "Create match" knappen */
+#next-round-button {
+    background-color: var(--success);
+}
+/* Interaktive effekts for "Create match" knappen */
+#next-round-button:hover {
+    background-color: var(--secondary);
+}
+#next-round-button:active {
+    background-color: var(--success);
+}
+
+/* Unik farge for "Cancel" knappen */
+#end-match-button {
+    background-color: var(--danger);
+}
+/* Interaktive effekts for "Cancel" knappen */
+#end-match-button:hover {
+    background-color: var(--secondary);
+}
+#end-match-button:active {
+    background-color: var(--danger);
+}
