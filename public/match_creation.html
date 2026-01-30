@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="styles/global.css">
     <title>Padel Americano | Match Creation</title>
     <!--  -->
-    <link rel="stylesheet" href="./styles/match_creation.css">
-    <script src="./scripts/match_creation/match_creation.js" type="module" defer></script>
-    <script src="./scripts/match_creation/match_creation_form_validation.js" type="module" defer></script>
-    <script src="./scripts/match_creation/dynamic_display_name.js" type="module" defer></script>
-    <script src="./scripts/match_creation/dynamic_players_input.js" type="module" defer></script>
-    <script src="./scripts/match_creation/dynamic_courts_input.js" type="module" defer></script>
+    <link rel="stylesheet" href="styles/match_creation.css">
+    <script src="scripts/match_creation/match_creation.js" type="module" defer></script>
+    <script src="scripts/match_creation/match_creation_form_validation.js" type="module" defer></script>
+    <script src="scripts/match_creation/dynamic_display_name.js" type="module" defer></script>
+    <script src="scripts/match_creation/dynamic_players_input.js" type="module" defer></script>
+    <script src="scripts/match_creation/dynamic_courts_input.js" type="module" defer></script>
     <!-- Font Awesome icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Dropdown -->
     <link rel="stylesheet" href="./styles/dropdown.css">
-    <script src="./scripts/utilities/drop_down.js" defer></script>
+    <script src="scripts/utilities/drop_down.js" defer></script>
     <!-- Slider -->
     <link rel="stylesheet" href="./styles/slider.css">
-    <script src="./scripts/utilities/slider.js" type="module" defer></script>
+    <script src="scripts/utilities/slider.js" type="module" defer></script>
 </head>
 <body>
     <div class="modal-overlay">
@@ -30,7 +30,9 @@
             </div>
             <form id="match-creation-form" autocomplete="off">
                 <div style="grid-area: left;">
+                    <!-- Alt av spille inputs -->
                     <div class="player-inputs-container">
+                        <!-- Slider for å velge antall spillere i kampen -->
                         <label style="grid-area: label;">Players</label>
                         <div class="slider-container" style="grid-area: slider;">
                             <input type="range" class="slider" id="player-amount-input" name="player-amount-input" value="4">
@@ -40,6 +42,7 @@
                                 <span class="slider-max">24</span>
                             </div>
                         </div>
+                        <!-- Tekstfelt for å skrive inn navn til all spillerene -->
                         <div class="player-inputs">
                             <input type="text" id="player-1-input" name="player-1" placeholder="Player 1">
                             <input type="text" id="player-2-input" name="player-2" placeholder="Player 2">
@@ -47,6 +50,7 @@
                             <input type="text" id="player-4-input" name="player-4" placeholder="Player 4">
                         </div>
                     </div>
+                    <!-- Slider for å velge hvor mange baner man spiller på -->
                     <div class="court-amount-input-container">
                         <label>Courts</label>
                         <div class="slider-container disabled">
@@ -61,10 +65,12 @@
                     </div>
                 </div>
                 <div style="grid-area: right;">
+                    <!-- Tekst felt for å skrive in eget navn for kampen, er ikke nødvendig -->
                     <div>
                         <label for="match-display-name-input">Match name</label>
                         <input type="text" id="match-display-name-input" name="match-display-name-input" placeholder="Match name">
                     </div>
+                    <!-- Dropdown meny for å velge hvem algoritme man bruker til å lage lag -->
                     <div>
                         <label>Team algorithm</label>
                         <div class="dropdown-wrapper" id="team-algorithm-input">
@@ -75,10 +81,11 @@
                             <div class="dropdown-menu">
                                 <div class="dropdown-item dropdown-active">Americano</div>
                                 <div class="dropdown-item">Random</div>
-                                <div class="dropdown-item">Manual</div>
+                                <!-- <div class="dropdown-item">Manual</div> -->
                             </div>
                         </div>
                     </div>
+                    <!-- Dropdown meny for å velge hvor mange poeng man spiller til -->
                     <div>
                         <label>Points</label>
                         <div class="dropdown-wrapper" id="points-to-play-input">
@@ -93,6 +100,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Knapper for å starte eller kanselere kampen -->
                 <div class="match-creation-buttons" style="grid-area: buttons;">
                     <div>
                         <button type="submit" id="match-create-button">Create Match</button>

@@ -2,9 +2,9 @@
     "user_matches": {
         "1320261": {
             "matchId": "1320261",
-            "hostUserId": "0",
+            "hostUserId": 0,
             "matchDisplayName": "untitled_match_1/3/2026_1",
-            "creationDate": {
+            "creationDateObject": {
                 "day": "3",
                 "month": "1",
                 "year": "2026"

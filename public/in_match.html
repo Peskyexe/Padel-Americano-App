@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="styles/global.css">
     <title>Padel Americano | In match</title>
     <!--  -->
-    <link rel="stylesheet" href="./styles/in_match.css">
-    <script src="./scripts/in_match/dynamic_points_sliders.js" type="module" defer></script>
+    <link rel="stylesheet" href="styles/in_match.css">
+    <script src="scripts/in_match/in_match.js" type="module" defer></script>
+    <script src="scripts/in_match/dynamic_points_sliders.js" type="module" defer></script>
     <!-- Slider --> 
-    <link rel="stylesheet" href="./styles/slider.css">
-    <script src="./scripts/utilities/slider.js" type="module" defer></script>
+    <link rel="stylesheet" href="styles/slider.css">
+    <script src="scripts/utilities/slider.js" type="module" defer></script>
     <!-- Font Awesome icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -25,6 +26,7 @@
                 </div>
                 <i class="fa-solid fa-chevron-right chevron-icon" id="chevron-right"></i>
             </header>
+            <!-- Container for teksten som viser hvem spillere som er på hvem lag -->
             <div class="teams-container">
                 <div id="team-1-container" class="grid-1 team-container">
                     <h2 class="grid-1">Team 1</h2>
@@ -42,6 +44,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Slidere for å fylle ut hvor mange poeng hvert lag har -->
             <div class="inputs-container">
                 <div class="scores-container">
                     <div class="team-score-input">
@@ -69,6 +72,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- Knapper for å gå til neste runde, eller slutte kampen -->
                 <div class="buttons-container">
                     <button id="next-round-button">Next Round</button>
                     <button id="end-match-button">End Match</button>
