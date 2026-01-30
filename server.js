@@ -7,7 +7,6 @@ const { readFile, writeFile, mkdir } = require("fs").promises;
 // Middleware setup
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
-app.use('/assets', express.static(path.join(__dirname, "assets")));
 
 
 // Rute for "match creation" siden
@@ -17,7 +16,7 @@ app.get("/match-creation", async (request, response) => {
 
 
 // POST api for å kunne sende inn match_creation data, mangler alt av sikkerhets funksjonalitet
-app.post("/match_creation/submit", async (request, response) => {
+app.post("/api/matches/creation", async (request, response) => {
     try {
         const incoming_match_object = request.body;
 
@@ -60,8 +59,31 @@ app.post("/match_creation/submit", async (request, response) => {
     }
 });
 
-app.get()
+app.get("/api/matches/creation/:uid/:mid", async (request, response) => {
+    try {
+        const user_id = request.params.uid;
+        const match_id = request.params.mid;
 
+        const user_directory = path.join(__dirname, "userdata", user_id);
+
+        console.log(`Fetching match creation data for user: '${user_id}', match id: '${match_id}'`)
+
+        let matches;
+        try {
+            console.log('Reading match_creation_data file')
+            const file_content = await readFile(path.join(user_directory, "match_creation_data.json"), "utf8");
+            matches = JSON.parse(file_content);
+        } catch (error) {
+            console.error('Failed to read match_creation_data file', user_id);
+            throw error
+        }
+    }
+
+    catch (error) {
+        console.error("Error fetching match data", error);
+        response.status(500).json({ success: false, error: error.message });
+    }
+})
 
 // Rute for "in match" siden
 app.get("/round", async (request, response) => {

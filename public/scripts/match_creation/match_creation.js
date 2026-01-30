@@ -114,7 +114,7 @@ function submitMatchCreationData(match_data) {
     const match_data_json = JSON.stringify(match_data, null, 4);
 
     // Sender API post call til servern, og sender med JSON dataen
-	fetch('/match_creation/submit', {
+	fetch('/api/matches/creation', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json'
