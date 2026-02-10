@@ -1,5 +1,26 @@
 {
     "user_matches": {
+        "30120260": {
+            "matchId": "30120260",
+            "hostUserId": "0",
+            "matchDisplayName": "untitled_match_30/1/2026_0",
+            "creationDateObject": {
+                "day": 5,
+                "month": 1,
+                "year": 2026
+            },
+            "creationDateString": "30/1/2026",
+            "creationTime": "14:01",
+            "pointsToPlay": 11,
+            "teamCreationMethod": "Americano",
+            "players": {
+                "player_1": "Jørgen",
+                "player_2": "Daniel",
+                "player_3": "OK",
+                "player_4": "Alex"
+            },
+            "amountOfCourts": 1
+        },
         "301202637": {
             "matchId": "301202637",
             "hostUserId": "0",

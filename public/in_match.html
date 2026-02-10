@@ -8,6 +8,7 @@
     <!--  -->
     <link rel="stylesheet" href="styles/in_match.css">
     <script src="scripts/in_match/in_match.js" type="module" defer></script>
+    <script src="scripts/in_match/algorithms.js" type="module" defer></script>
     <script src="scripts/in_match/dynamic_points_sliders.js" type="module" defer></script>
     <!-- Slider --> 
     <link rel="stylesheet" href="styles/slider.css">
@@ -19,28 +20,28 @@
     <div class="modal-overlay">
         <div class="in-match-container">
             <header>
-                <i class="fa-solid fa-chevron-left chevron-icon" id="chevron-left"></i>
+                <i class="fa-solid fa-chevron-left chevron-icon" id="previous-round-chevron"></i>
                 <div>
                     <h4>Padel Americano</h4>
                     <h1>Round 1</h1>
                 </div>
-                <i class="fa-solid fa-chevron-right chevron-icon" id="chevron-right"></i>
+                <i class="fa-solid fa-chevron-right chevron-icon" id="next-round-chevron"></i>
             </header>
             <!-- Container for teksten som viser hvem spillere som er på hvem lag -->
             <div class="teams-container">
                 <div id="team-1-container" class="grid-1 team-container">
                     <h2 class="grid-1">Team 1</h2>
                     <div class="grid-2 team-player-names">
-                        <span id="player-1-text">Jørgen</span>
-                        <span id="player-2-text">Alexander</span>
+                        <span id="player-1-text" class="player-name-text">Jørgen</span>
+                        <span id="player-2-text" class="player-name-text">Alexander</span>
                     </div>
                 </div>
                 <div id="teams-seperator-line" class="grid-2"></div>
                 <div id="team-2-container" class="grid-3 team-container">
                     <h2 class="grid-1">Team 2</h2>
                     <div class="grid-2 team-player-names">
-                        <span id="player-3-text">Daniel</span>
-                        <span id="player-4-text">Ole-Krisitan</span>
+                        <span id="player-3-text" class="player-name-text">Daniel</span>
+                        <span id="player-4-text" class="player-name-text">Ole-Krisitan</span>
                     </div>
                 </div>
             </div>
