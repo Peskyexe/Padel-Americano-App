@@ -440,6 +440,34 @@
                         "team2": {
                             "player1Index": 0,
                             "player2Index": 3
+                        },
+                        "team1Points": 6,
+                        "team2Points": 5
+                    }
+                },
+                {
+                    "court1": {
+                        "team1": {
+                            "player1Index": 2,
+                            "player2Index": 1
+                        },
+                        "team2": {
+                            "player1Index": 3,
+                            "player2Index": 0
+                        },
+                        "team1Points": 5,
+                        "team2Points": 6
+                    }
+                },
+                {
+                    "court1": {
+                        "team1": {
+                            "player1Index": 0,
+                            "player2Index": 2
+                        },
+                        "team2": {
+                            "player1Index": 3,
+                            "player2Index": 1
                         }
                     }
                 }
@@ -447,79 +475,95 @@
             "players": [
                 {
                     "playerName": "Jørgen",
-                    "roundsPlayed": 2,
-                    "pointsWon": 12,
-                    "pointsLost": 10,
-                    "wins": 1,
-                    "losses": 1,
+                    "roundsPlayed": 4,
+                    "pointsWon": 23,
+                    "pointsLost": 21,
+                    "wins": 2,
+                    "losses": 2,
                     "winratePercentage": 50,
                     "pointGapArray": [
                         -5,
-                        7
+                        7,
+                        -1,
+                        1
                     ],
                     "absPointGapArray": [
                         5,
-                        7
+                        7,
+                        1,
+                        1
                     ],
-                    "averagePointGap": 1,
-                    "averageAbsPointGap": 6
+                    "averagePointGap": 0.5,
+                    "averageAbsPointGap": 3.5
                 },
                 {
                     "playerName": "Sander",
-                    "roundsPlayed": 2,
-                    "pointsWon": 5,
-                    "pointsLost": 17,
-                    "wins": 0,
-                    "losses": 2,
-                    "winratePercentage": 0,
+                    "roundsPlayed": 4,
+                    "pointsWon": 16,
+                    "pointsLost": 28,
+                    "wins": 1,
+                    "losses": 3,
+                    "winratePercentage": 25,
                     "pointGapArray": [
                         -5,
-                        -7
+                        -7,
+                        1,
+                        -1
                     ],
                     "absPointGapArray": [
                         5,
-                        7
+                        7,
+                        1,
+                        1
                     ],
-                    "averagePointGap": -6,
-                    "averageAbsPointGap": 6
+                    "averagePointGap": -3,
+                    "averageAbsPointGap": 3.5
                 },
                 {
                     "playerName": "Maren",
-                    "roundsPlayed": 2,
-                    "pointsWon": 10,
-                    "pointsLost": 12,
-                    "wins": 1,
-                    "losses": 1,
+                    "roundsPlayed": 4,
+                    "pointsWon": 21,
+                    "pointsLost": 23,
+                    "wins": 2,
+                    "losses": 2,
                     "winratePercentage": 50,
                     "pointGapArray": [
                         5,
-                        -7
+                        -7,
+                        1,
+                        -1
                     ],
                     "absPointGapArray": [
                         5,
-                        7
+                        7,
+                        1,
+                        1
                     ],
-                    "averagePointGap": -1,
-                    "averageAbsPointGap": 6
+                    "averagePointGap": -0.5,
+                    "averageAbsPointGap": 3.5
                 },
                 {
                     "playerName": "Benjamin",
-                    "roundsPlayed": 2,
-                    "pointsWon": 17,
-                    "pointsLost": 5,
-                    "wins": 2,
-                    "losses": 0,
-                    "winratePercentage": 100,
+                    "roundsPlayed": 4,
+                    "pointsWon": 28,
+                    "pointsLost": 16,
+                    "wins": 3,
+                    "losses": 1,
+                    "winratePercentage": 75,
                     "pointGapArray": [
                         5,
-                        7
+                        7,
+                        -1,
+                        1
                     ],
                     "absPointGapArray": [
                         5,
-                        7
+                        7,
+                        1,
+                        1
                     ],
-                    "averagePointGap": 6,
-                    "averageAbsPointGap": 6
+                    "averagePointGap": 3,
+                    "averageAbsPointGap": 3.5
                 }
             ],
             "rankingByIndex": [
