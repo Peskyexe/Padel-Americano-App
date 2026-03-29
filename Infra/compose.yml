@@ -6,7 +6,7 @@ networks:
 
 services:
   webapp:
-    image: ${IMAGE_NAME}:${IMAGE_TAG}
+    image: ghcr.io/peskyexe/padel-americano-app:lastest
     container_name: padel_americano
     expose:
       - "3000"
