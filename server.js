@@ -8,6 +8,10 @@ const { readFile, writeFile, mkdir } = require("fs").promises;
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.get("/healthz", (request, response) => {
+    response.status(200).json({ status: "ok" });
+});
+
 
 // Rute for "match creation" siden
 app.get("/match-creation", async (request, response) => {

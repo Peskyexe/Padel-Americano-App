@@ -19,7 +19,7 @@ jobs:
 
     env:
       REMOTE_DIR: /opt/diggfor
-      LOCAL_COMPOSE: Infra/compose.yaml
+      LOCAL_COMPOSE: Infra/compose.yml
       TAILSCALE_TAGS: "tag:cicd-runner"
 
     steps:
@@ -35,6 +35,7 @@ jobs:
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: ${{ env.TAILSCALE_TAGS }}
 
       - name: Verify Tailscale connection
         run: |
