@@ -17,10 +17,13 @@ matches.forEach(match => {
 function initializeSlider(slider_container, other_slider_container, points_to_play) {
     const slider_element = slider_container.querySelector("input");
 
-    slider_element.addEventListener('input', () => {
+    const handleSliderChange = () => {
         let new_point_limit = calculateLimitedPoints(slider_element.value, points_to_play);
         updateSliderValue(other_slider_container, new_point_limit);
-    });
+    };
+
+    slider_element.addEventListener('input', handleSliderChange);
+    slider_element.addEventListener('change', handleSliderChange);
 }
 
 

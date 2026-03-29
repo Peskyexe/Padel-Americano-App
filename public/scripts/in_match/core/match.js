@@ -35,10 +35,11 @@ async function saveMatch() {
 }
 
 async function startMatch() {
-    const newRound = getNewRound();
-    match.matchData.rounds[matchState.activeRoundIndex] = newRound;
-
-    await saveMatch(match, hostUserId, matchId);
+    if (matchState.activeRoundIndex == 0) {
+        const newRound = getNewRound();
+        match.matchData.rounds[matchState.activeRoundIndex] = newRound;
+        await saveMatch(match, hostUserId, matchId);
+    }
 
     goToRound(matchState.activeRoundIndex);
 }
