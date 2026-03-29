@@ -1,0 +1,11 @@
+services:
+  padel-americano-app:
+    image: ${IMAGE_NAME}:${IMAGE_TAG}
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      NODE_ENV: production
+    volumes:
+      - ./userdata:/app/userdata
+    restart: unless-stopped
