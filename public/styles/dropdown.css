@@ -75,7 +75,20 @@
     justify-content: center;
     align-items: center;
     transition: 0.1s ease;
+
+    &:first-child {
+        border-radius: 0.4em 0.4em 0 0;
+    }
+
+    &:last-child {
+        border-radius: 0 0 0.4em 0.4em ;
+    }
+
+    &:only-child {
+        border-radius: 0.4em;
+    }
 }
+
 
 /* Interaktive effekter for valgene i dropdown menyen */
 .dropdown-item:hover {

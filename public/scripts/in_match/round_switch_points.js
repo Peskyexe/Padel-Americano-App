@@ -18,7 +18,7 @@ function getTeamSliders(match, team) {
 function validatePoints() {
     let isError = false;
     matchContainers.forEach(match => {
-        const slidersContainer = match.querySelector(".scores-container");
+        const sliderContainers = match.querySelectorAll(".team-score-input");
         const team1Slider = match.querySelector("#team-1-score-input");
         const team2Slider = match.querySelector("#team-2-score-input");
 
@@ -27,11 +27,15 @@ function validatePoints() {
             errorText.style.display = "block";
             isError = true;
 
-            slidersContainer.classList.add("incorrect");
+            sliderContainers.forEach(container => {
+                container.classList.add("incorrect");
+            });
 
             // Clear error on any slider input
             const clearError = () => {
-                slidersContainer.classList.remove("incorrect");
+            sliderContainers.forEach(container => {
+                container.classList.remove("incorrect");
+            });
                 errorText.innerText = "";
                 errorText.style.display = "none";
             };
@@ -53,7 +57,7 @@ function hideSliders(courtObject, courtIndex) {
         const { container, replacement } = getTeamSliders(match, team);
         container.style.display = "none";
         replacement.style.display = "block";
-        replacement.innerText = courtObject[`team${team}points`];
+        replacement.innerText = courtObject[`team${team}Points`];
     });
 }
 

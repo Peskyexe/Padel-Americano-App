@@ -1,11 +1,11 @@
 {
-    "0320262": {
-        "matchId": "0320262",
+    "03202613": {
+        "matchId": "03202613",
         "hostUserId": "0",
-        "matchDisplayName": "untitled_match_0/3/2026_2",
+        "matchDisplayName": "untitled_match_0/3/2026_13",
         "creationData": {
             "timeData": {
-                "time": "11:57",
+                "time": "21:28",
                 "date": 0,
                 "month": 3,
                 "year": 2026,
@@ -16,52 +16,281 @@
             "teamAlgorithm": "Americano"
         },
         "matchData": {
-            "rounds": [],
+            "rounds": [
+                {
+                    "court1": {
+                        "team1": {
+                            "player1Index": 0,
+                            "player2Index": 3
+                        },
+                        "team2": {
+                            "player1Index": 1,
+                            "player2Index": 2
+                        },
+                        "team1Points": 8,
+                        "team2Points": 3
+                    }
+                },
+                {
+                    "court1": {
+                        "team1": {
+                            "player1Index": 3,
+                            "player2Index": 0
+                        },
+                        "team2": {
+                            "player1Index": 1,
+                            "player2Index": 2
+                        },
+                        "team1Points": 2,
+                        "team2Points": 9
+                    }
+                },
+                {
+                    "court1": {
+                        "team1": {
+                            "player1Index": 0,
+                            "player2Index": 3
+                        },
+                        "team2": {
+                            "player1Index": 2,
+                            "player2Index": 1
+                        },
+                        "team1Points": 7,
+                        "team2Points": 4
+                    }
+                },
+                {
+                    "court1": {
+                        "team1": {
+                            "player1Index": 3,
+                            "player2Index": 2
+                        },
+                        "team2": {
+                            "player1Index": 1,
+                            "player2Index": 0
+                        },
+                        "team1Points": 8,
+                        "team2Points": 3
+                    }
+                },
+                {
+                    "court1": {
+                        "team1": {
+                            "player1Index": 3,
+                            "player2Index": 0
+                        },
+                        "team2": {
+                            "player1Index": 2,
+                            "player2Index": 1
+                        },
+                        "team1Points": 4,
+                        "team2Points": 7
+                    }
+                },
+                {
+                    "court1": {
+                        "team1": {
+                            "player1Index": 1,
+                            "player2Index": 2
+                        },
+                        "team2": {
+                            "player1Index": 0,
+                            "player2Index": 3
+                        },
+                        "team1Points": 8,
+                        "team2Points": 3
+                    }
+                },
+                {
+                    "court1": {
+                        "team1": {
+                            "player1Index": 3,
+                            "player2Index": 0
+                        },
+                        "team2": {
+                            "player1Index": 1,
+                            "player2Index": 2
+                        },
+                        "team1Points": 3,
+                        "team2Points": 8
+                    }
+                },
+                {
+                    "court1": {
+                        "team1": {
+                            "player1Index": 1,
+                            "player2Index": 2
+                        },
+                        "team2": {
+                            "player1Index": 0,
+                            "player2Index": 3
+                        },
+                        "team1Points": 7,
+                        "team2Points": 4
+                    }
+                },
+                {
+                    "court1": {
+                        "team1": {
+                            "player1Index": 1,
+                            "player2Index": 0
+                        },
+                        "team2": {
+                            "player1Index": 3,
+                            "player2Index": 2
+                        }
+                    }
+                }
+            ],
             "players": [
                 {
                     "playerName": "Jørgen",
-                    "pointsWon": 0,
-                    "wins": 0,
-                    "winratePercentage": 0,
-                    "averagePointGap": 0
+                    "roundsPlayed": 8,
+                    "pointsWon": 34,
+                    "pointsLost": 54,
+                    "wins": 2,
+                    "losses": 6,
+                    "winratePercentage": 25,
+                    "pointGapArray": [
+                        5,
+                        -7,
+                        3,
+                        -5,
+                        -3,
+                        -5,
+                        -5,
+                        -3
+                    ],
+                    "absPointGapArray": [
+                        5,
+                        7,
+                        3,
+                        5,
+                        3,
+                        5,
+                        5,
+                        3
+                    ],
+                    "averagePointGap": -2.5,
+                    "averageAbsPointGap": 4.5
                 },
                 {
                     "playerName": "Sander",
-                    "pointsWon": 0,
-                    "wins": 0,
-                    "winratePercentage": 0,
-                    "averagePointGap": 0
+                    "roundsPlayed": 8,
+                    "pointsWon": 49,
+                    "pointsLost": 39,
+                    "wins": 5,
+                    "losses": 3,
+                    "winratePercentage": 62.5,
+                    "pointGapArray": [
+                        -5,
+                        7,
+                        -3,
+                        -5,
+                        3,
+                        5,
+                        5,
+                        3
+                    ],
+                    "absPointGapArray": [
+                        5,
+                        7,
+                        3,
+                        5,
+                        3,
+                        5,
+                        5,
+                        3
+                    ],
+                    "averagePointGap": 1.25,
+                    "averageAbsPointGap": 4.5
                 },
                 {
-                    "playerName": "Vebjørn",
-                    "pointsWon": 0,
-                    "wins": 0,
-                    "winratePercentage": 0,
-                    "averagePointGap": 0
+                    "playerName": "Maren",
+                    "roundsPlayed": 8,
+                    "pointsWon": 54,
+                    "pointsLost": 34,
+                    "wins": 6,
+                    "losses": 2,
+                    "winratePercentage": 75,
+                    "pointGapArray": [
+                        -5,
+                        7,
+                        -3,
+                        5,
+                        3,
+                        5,
+                        5,
+                        3
+                    ],
+                    "absPointGapArray": [
+                        5,
+                        7,
+                        3,
+                        5,
+                        3,
+                        5,
+                        5,
+                        3
+                    ],
+                    "averagePointGap": 2.5,
+                    "averageAbsPointGap": 4.5
                 },
                 {
-                    "playerName": "Pål",
-                    "pointsWon": 0,
-                    "wins": 0,
-                    "winratePercentage": 0,
-                    "averagePointGap": 0
+                    "playerName": "Benjamin",
+                    "roundsPlayed": 8,
+                    "pointsWon": 39,
+                    "pointsLost": 49,
+                    "wins": 3,
+                    "losses": 5,
+                    "winratePercentage": 37.5,
+                    "pointGapArray": [
+                        5,
+                        -7,
+                        3,
+                        5,
+                        -3,
+                        -5,
+                        -5,
+                        -3
+                    ],
+                    "absPointGapArray": [
+                        5,
+                        7,
+                        3,
+                        5,
+                        3,
+                        5,
+                        5,
+                        3
+                    ],
+                    "averagePointGap": -1.25,
+                    "averageAbsPointGap": 4.5
                 }
             ],
             "rankingByIndex": [
-                0,
-                1,
-                2,
-                3
+                [
+                    2
+                ],
+                [
+                    1
+                ],
+                [
+                    3
+                ],
+                [
+                    0
+                ]
             ]
         }
     },
-    "0320263": {
-        "matchId": "0320263",
+    "03202614": {
+        "matchId": "03202614",
         "hostUserId": "0",
-        "matchDisplayName": "untitled_match_0/3/2026_3",
+        "matchDisplayName": "untitled_match_0/3/2026_14",
         "creationData": {
             "timeData": {
-                "time": "11:59",
+                "time": "21:35",
                 "date": 0,
                 "month": 3,
                 "year": 2026,
@@ -72,42 +301,87 @@
             "teamAlgorithm": "Americano"
         },
         "matchData": {
-            "rounds": [],
+            "rounds": [
+                {
+                    "court1": {
+                        "team1": {
+                            "player1Index": 1,
+                            "player2Index": 0
+                        },
+                        "team2": {
+                            "player1Index": 2,
+                            "player2Index": 3
+                        }
+                    }
+                }
+            ],
             "players": [
                 {
-                    "playerName": "Vebjørn",
+                    "playerName": "Jørgen",
+                    "roundsPlayed": 0,
                     "pointsWon": 0,
+                    "pointsLost": 0,
                     "wins": 0,
+                    "losses": 0,
                     "winratePercentage": 0,
-                    "averagePointGap": 0
+                    "pointGapArray": [],
+                    "absPointGapArray": [],
+                    "averagePointGap": 0,
+                    "averageAbsPointGap": 0
+                },
+                {
+                    "playerName": "Maren",
+                    "roundsPlayed": 0,
+                    "pointsWon": 0,
+                    "pointsLost": 0,
+                    "wins": 0,
+                    "losses": 0,
+                    "winratePercentage": 0,
+                    "pointGapArray": [],
+                    "absPointGapArray": [],
+                    "averagePointGap": 0,
+                    "averageAbsPointGap": 0
                 },
                 {
                     "playerName": "Sander",
+                    "roundsPlayed": 0,
                     "pointsWon": 0,
+                    "pointsLost": 0,
                     "wins": 0,
+                    "losses": 0,
                     "winratePercentage": 0,
-                    "averagePointGap": 0
+                    "pointGapArray": [],
+                    "absPointGapArray": [],
+                    "averagePointGap": 0,
+                    "averageAbsPointGap": 0
                 },
                 {
-                    "playerName": "Pål",
+                    "playerName": "Benjamin",
+                    "roundsPlayed": 0,
                     "pointsWon": 0,
+                    "pointsLost": 0,
                     "wins": 0,
+                    "losses": 0,
                     "winratePercentage": 0,
-                    "averagePointGap": 0
-                },
-                {
-                    "playerName": "Jørgen",
-                    "pointsWon": 0,
-                    "wins": 0,
-                    "winratePercentage": 0,
-                    "averagePointGap": 0
+                    "pointGapArray": [],
+                    "absPointGapArray": [],
+                    "averagePointGap": 0,
+                    "averageAbsPointGap": 0
                 }
             ],
             "rankingByIndex": [
-                0,
-                1,
-                2,
-                3
+                [
+                    0
+                ],
+                [
+                    1
+                ],
+                [
+                    2
+                ],
+                [
+                    3
+                ]
             ]
         }
     }

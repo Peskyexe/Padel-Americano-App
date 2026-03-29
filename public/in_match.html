@@ -7,11 +7,9 @@
     <title>Padel Americano | In match</title>
     <!--  -->
     <link rel="stylesheet" href="styles/in_match.css">
-    <script src="scripts/in_match/in_match.js" type="module" defer></script>
-    <script src="scripts/in_match/teams_random.js" type="module" defer></script>
-    <script src="scripts/in_match/dynamic_points_sliders.js" type="module" defer></script>
+    <script src="scripts/in_match/controller.js" type="module" defer></script>
     <script src="scripts/in_match/round_switch_chevrons.js" type="module" defer></script>
-    <script src="scripts/in_match/round_switch_points.js" type="module" defer></script>
+    <script src="scripts/in_match/dynamic_points_sliders.js" type="module" defer></script>
     <!-- Slider --> 
     <link rel="stylesheet" href="styles/slider.css">
     <script src="scripts/utilities/slider.js" type="module" defer></script>
@@ -37,23 +35,22 @@
                         <div id="team-1-container" class="grid-1 team-container">
                             <h2 class="grid-1">Team 1</h2>
                             <div class="grid-2 team-player-names">
-                                <span id="player-1" class="player-name-text">Jørgen</span>
-                                <span id="player-2" class="player-name-text">Alexander</span>
+                                <span id="player-1" class="player-name-text">unloaded</span>
+                                <span id="player-2" class="player-name-text">unloaded</span>
                             </div>
                         </div>
                         <div class="grid-2 teams-seperator-line"></div>
                         <div id="team-2-container" class="grid-3 team-container">
                             <h2 class="grid-1">Team 2</h2>
                             <div class="grid-2 team-player-names">
-                                <span id="player-3" class="player-name-text">Daniel</span>
-                                <span id="player-4" class="player-name-text">Ole-Krisitan</span>
+                                <span id="player-3" class="player-name-text">unloaded</span>
+                                <span id="player-4" class="player-name-text">unloaded</span>
                             </div>
                         </div>
-                    </div>
-                    <!-- Slidere for å fylle ut hvor mange poeng hvert lag har -->
-                    <div class="scores-container">
-                        <div class="grid-1 team-score-input">
-                            <label>Scored Points</label>
+                    <!-- </div>
+                    <div class="scores-container"> -->
+                        <div class="grid-4 team-score-input">
+                            <label>Points Won</label>
                             <div class="slider-container" id="team-1-score-container" style="grid-area: slider;">
                                 <input type="range" class="slider" id="team-1-score-input" name="team-1-score" value="0" min="0" max="11">
                                 <div class="slider-values-container">
@@ -64,9 +61,8 @@
                             </div>
                             <span class="slider-replacement" id="team-1-replacement-label">0</span>
                         </div>
-                        <div class="grid-2 teams-seperator-line"></div>
-                        <div class="grid-3 team-score-input">
-                            <label>Scored Points</label>
+                        <div class="grid-5 team-score-input">
+                            <label>Points Won</label>
                             <div class="slider-container" id="team-2-score-container" style="grid-area: slider;">
                                 <input type="range" class="slider" id="team-2-score-input" name="team-1-score" value="0" min="0" max="11">
                                 <div class="slider-values-container">
@@ -80,13 +76,12 @@
                     </div>
                 </li>
             </ul>
-            
             <!-- Knapper for å gå til neste runde, eller slutte kampen -->
             <div class="buttons-container">
-                <span class="grid-1" id="error-text"></span>
-                <button class="grid-2" id="next-round-button">Next Round</button>
-                <button class="grid-3" id="end-match-button">End Match</button>
+                <button class="grid-1" id="next-round-button">Next Round</button>
+                <button class="grid-2" id="end-match-button">End Match</button>
             </div>
+            <span id="error-text"></span>
         </div>
     </div>
 </body>

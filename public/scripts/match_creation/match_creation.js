@@ -88,10 +88,16 @@ function constructPlayersArray() {
         playerElements.forEach((player) => {
             const playerData = {
                 playerName: player.value,
+                roundsPlayed: 0,
                 pointsWon: 0,
+                pointsLost: 0,
                 wins: 0,
+                losses: 0,
                 winratePercentage: 0,
-                averagePointGap: 0
+                pointGapArray: [],
+                absPointGapArray: [],
+                averagePointGap: 0,
+                averageAbsPointGap: 0
             };
 
             playersArray.push(playerData)
@@ -105,7 +111,7 @@ function constructPlayersArray() {
 function generateTemplatePlayerRanking(playerCount) {
     const rankingArray = []
     for (let i = 0; i < playerCount; i++) {
-        rankingArray.push(i)
+        rankingArray.push([i])
     }
     return rankingArray
 }

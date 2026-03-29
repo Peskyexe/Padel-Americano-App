@@ -1,8 +1,8 @@
 import { updateGradient } from "../utilities/slider.js";
-import { matchCreationData } from "./in_match.js";
+import { match } from "./controller.js";
 
 
-const points_to_play = matchCreationData.pointsToPlay;
+const points_to_play = match.creationData.pointsToPlay;
 const matches = document.querySelectorAll(".matches-container > li");
 
 matches.forEach(match => {

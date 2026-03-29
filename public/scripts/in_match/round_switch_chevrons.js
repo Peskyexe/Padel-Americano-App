@@ -1,4 +1,5 @@
-import { totalRounds, activeRound, goToRound } from "./in_match.js";
+import { matchState } from "./controller.js";
+import { goToRound } from "./core/rounds.js";
 
 const previous_round = document.getElementById("previous-round-chevron");
 const next_round = document.getElementById("next-round-chevron")
@@ -8,36 +9,40 @@ var next_active = false;
 
 previous_round.addEventListener("click", (event) => {
     if (previous_active) {
-        goToRound(activeRound - 1);
+        goToRound(matchState.activeRoundIndex - 1);
+        // console.log(`(Chevron)\nTotal: ${matchState.totalRounds}\nActive: ${matchState.activeRoundIndex}`);
     }
 })
 
 next_round.addEventListener("click", (event) => {
     if (next_active) {
-        goToRound(activeRound + 1);
+        goToRound(matchState.activeRoundIndex + 1);
+        // console.log(`(Chevron)\nTotal: ${matchState.totalRounds}\nActive: ${matchState.activeRoundIndex}`);
     }
 })
 
 
 function updateChevronStates() {
-    if (totalRounds == 1) {
+    // console.log(`(Status update)\nTotal: ${matchState.totalRounds}\nActive: ${matchState.activeRoundIndex}`);
+
+    if (matchState.totalRounds == 0) {
         previous_round.classList.add("chevron-icon-inactive");
         next_round.classList.add("chevron-icon-inactive");
         previous_active = false;
         next_active = false;
     }
-    else if (totalRounds > 1) {
+    else if (matchState.totalRounds > 0) {
         previous_round.classList.remove("chevron-icon-inactive");
         next_round.classList.remove("chevron-icon-inactive");
         previous_active = true;
         next_active = true;
 
-        if (activeRound == 1) {
+        if (matchState.activeRoundIndex == 0) {
             previous_round.classList.add("chevron-icon-inactive");
             previous_active = false;
         }
 
-        if (activeRound == totalRounds) {
+        if (matchState.activeRoundIndex == matchState.totalRounds) {
             next_round.classList.add("chevron-icon-inactive");
             next_active = true;
         }

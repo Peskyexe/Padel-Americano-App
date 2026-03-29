@@ -76,5 +76,5 @@ body .disabled {
     background: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(8px);
 
-    overflow-y: auto; /* 🔑 THIS enables scrolling */
+    overflow-y: auto;
 }
