@@ -28,7 +28,7 @@ function initializeSlider(slider_container) {
 }
 
 // Oppdaterer bakgrunns fargen til slideren basert på verdien
-function updateGradient(slider_element, gradient_primary = "oklch(0.76 0.1 264)", gradient_secondary = "oklch(0.45 0.06 264)") {
+function updateGradient(slider_element, gradient_primary = "var(--primary)", gradient_secondary = "var(--border)") {
     // Regner ut hvem prosent av max verdien selve verdien er
     let slider_value_percentage = (slider_element.value - slider_element.min) / (slider_element.max - slider_element.min) * 100;
 

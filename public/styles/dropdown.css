@@ -18,8 +18,8 @@
 
 /* Interaktive effekter for knappen */
 .dropdown-button:hover {
-    background-color: var(--primary);
-    border-color: var(--primary);
+    background-color: var(--text-muted);
+    border-color: var(--text-muted);
 }
 .dropdown-button:focus {
     background-color: var(--primary);

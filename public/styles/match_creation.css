@@ -2,11 +2,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3em;
+    gap: 2.25em;
     z-index: 11;
-    padding: 2em 2.5em 0 2.5em;
-    border-radius: 2em;
+    padding: 2em 2em 0 2em;
+    border-radius: 1.5em;
     background-color: var(--bg);
+    border: 1px solid var(--border-extra-muted);
     min-width: 1000px;
     max-height: 100vh;
     overflow-y: auto;
@@ -31,7 +32,7 @@
     "left right"
     "buttons buttons"
     "error-text error-text";
-    gap: 2em;
+    gap: 1.5em;
     width: 100%;
 }
 
@@ -40,17 +41,10 @@
     flex-direction: column;
     gap: 1.25em;
     background-color: var(--bg-light);
-    padding: 1em 1.5em;
-    border-radius: 1.5em;
-}
-
-.match-creation-container .player-inputs-container {
-    background-color: var(--bg-lighter);
-    padding: 0.75em;
+    border: 1px solid var(--border-extra-muted);
+    box-shadow: var(--shadow);
+    padding: 1em 1.25em;
     border-radius: 1em;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
 }
 
 .match-creation-container .player-inputs {
@@ -68,20 +62,26 @@
     font-size: 1.125em;
     color: var(--bg);
     background-color: var(--text);
-    transition: 0.2s ease;
+    transition: 0.15s ease-in-out;
+}
+.match-creation-container input[type="text"]::placeholder {
+    color: var(--bg-dark);
+    opacity: 0.6;
 }
 /* Interaktive effekter for alle text inputs i match creation modalen */
 .match-creation-container input[type="text"]:hover {
-    background-color: var(--primary);
-    border-color: var(--primary);
+    background-color: var(--text-muted);
+    border-color: var(--text-muted);
 }
 .match-creation-container input[type="text"]:focus {
     outline: none;
-    border-color: var(--text);
-    background-color: var(--primary);
+    border-color: var(--text-muted);
+    background-color: var(--text);
+    opacity: 0.8;
 }
 
-.match-creation-container div:has(>#court-amount-input) {
+.court-amount-input-container {
+    margin-top: 0.75em;
     width: 50%;
 }
 

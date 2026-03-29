@@ -1,0 +1,274 @@
+{
+    "5320264": {
+        "matchId": "5320264",
+        "hostUserId": "0",
+        "matchDisplayName": "Test 3",
+        "creationData": {
+            "timeData": {
+                "time": "17:51",
+                "day": 5,
+                "month": 3,
+                "year": 2026,
+                "dateString": "5/3/2026"
+            },
+            "pointsToPlay": 11,
+            "courts": 1,
+            "teamAlgorithm": "Americano"
+        },
+        "matchData": {
+            "rounds": [],
+            "players": [
+                {
+                    "playerName": "Jørgen",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "Alex",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "Daniel",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "OK",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "Sander",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "Pål",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                }
+            ],
+            "rankingByIndex": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ]
+        }
+    },
+    "6320260": {
+        "matchId": "6320260",
+        "hostUserId": "0",
+        "matchDisplayName": "test",
+        "creationData": {
+            "timeData": {
+                "time": "18:41",
+                "day": 6,
+                "month": 3,
+                "year": 2026,
+                "dateString": "6/3/2026"
+            },
+            "pointsToPlay": 11,
+            "courts": 1,
+            "teamAlgorithm": "Americano"
+        },
+        "matchData": {
+            "rounds": [],
+            "players": [
+                {
+                    "playerName": "Jørgen",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "Sander",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "Pål",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "Vebjørn",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                }
+            ],
+            "rankingByIndex": [
+                0,
+                1,
+                2,
+                3
+            ]
+        }
+    },
+    "6320261": {
+        "matchId": "6320261",
+        "hostUserId": "0",
+        "matchDisplayName": "Test",
+        "creationData": {
+            "timeData": {
+                "time": "18:59",
+                "date": 6,
+                "month": 3,
+                "year": 2026,
+                "dateString": "6/3/2026"
+            },
+            "pointsToPlay": 11,
+            "courts": 1,
+            "teamAlgorithm": "Americano"
+        },
+        "matchData": {
+            "rounds": [],
+            "players": [
+                {
+                    "playerName": "Jørgen",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "Sander",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "Pål",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "Vebjørn",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                }
+            ],
+            "rankingByIndex": [
+                0,
+                1,
+                2,
+                3
+            ]
+        }
+    },
+    "301202637": {
+        "matchId": "301202637",
+        "hostUserId": "0",
+        "matchDisplayName": "untitled_match_30/1/2026_37",
+        "creationData": {
+            "timeData": {
+                "time": "12:26",
+                "day": 5,
+                "month": 1,
+                "year": 2026,
+                "dateString": "30/1/2026"
+            },
+            "pointsToPlay": 11,
+            "courts": 1,
+            "teamAlgorithm": "Americano"
+        },
+        "matchData": {
+            "rounds": [],
+            "players": [
+                {
+                    "playerName": "OK",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "Alex",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "Daniel",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "Jørgen",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "Sander",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "Pål",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "Anders",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                },
+                {
+                    "playerName": "Hans",
+                    "pointsWon": 0,
+                    "wins": 0,
+                    "winratePercentage": 0,
+                    "averagePointGap": 0
+                }
+            ],
+            "rankingByIndex": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ]
+        }
+    }
+}

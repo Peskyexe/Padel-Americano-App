@@ -1,4 +1,4 @@
 @echo off
 echo Starting Node.js server...
-node server.js
+npm run dev
 pause
