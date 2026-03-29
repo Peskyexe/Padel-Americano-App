@@ -15,6 +15,7 @@ permissions:
 
 jobs:
   deploy:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
 
     env:
@@ -102,7 +103,7 @@ jobs:
             "set -euo pipefail; \
              cd '${REMOTE_DIR}'; \
              for i in {1..30}; do \
-               if docker compose ps --status running | grep -q 'padel-americano-app'; then \
+               if docker compose ps --status running | grep -q 'webapp'; then \
                  echo '✅ Services are running'; \
                  exit 0; \
                fi; \
@@ -122,4 +123,4 @@ jobs:
              docker compose ps; \
              echo ''; \
              echo '=== Recent Logs (last 20 lines) ==='; \
-             docker compose logs --tail=20 padel-americano-app"
+             docker compose logs --tail=20 webapp"

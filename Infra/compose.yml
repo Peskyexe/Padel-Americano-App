@@ -6,7 +6,7 @@ networks:
 
 services:
   webapp:
-    image: ghcr.io/peskyexe/padel-americano-app:lastest
+    image: ghcr.io/peskyexe/padel-americano-app:latest
     container_name: padel_americano
     expose:
       - "3000"
