@@ -48,7 +48,7 @@ jobs:
             "set -euo pipefail; \
              echo '📁 Creating remote directory: ${REMOTE_DIR}'; \
              mkdir -p '${REMOTE_DIR}'; \
-             mkdir -p '${REMOTE_DIR}/userdata'; \
+             mkdir -p '${REMOTE_DIR}/data'; \
              if [ -f '${REMOTE_DIR}/compose.yaml' ]; then \
                ts=\$(date +%F-%H%M%S); \
                echo '💾 Backing up existing compose.yaml to compose.yaml.bak.'\"\$ts\"; \
