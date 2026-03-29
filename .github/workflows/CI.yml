@@ -38,11 +38,11 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.repository }}:latest
+          images: ghcr.io/${{ github.repository }}
           tags: |
             type=raw,value=latest,enable={{is_default_branch}}
             type=sha
-            
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
         with:
