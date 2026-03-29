@@ -384,5 +384,158 @@
                 ]
             ]
         }
+    },
+    "03202615": {
+        "matchId": "03202615",
+        "hostUserId": "0",
+        "matchDisplayName": "Refresh wipe fix test",
+        "creationData": {
+            "timeData": {
+                "time": "23:55",
+                "date": 0,
+                "month": 3,
+                "year": 2026,
+                "dateString": "0/3/2026"
+            },
+            "pointsToPlay": 11,
+            "courts": 1,
+            "teamAlgorithm": "Americano"
+        },
+        "matchData": {
+            "rounds": [
+                {
+                    "court1": {
+                        "team1": {
+                            "player1Index": 2,
+                            "player2Index": 3
+                        },
+                        "team2": {
+                            "player1Index": 0,
+                            "player2Index": 1
+                        },
+                        "team1Points": 8,
+                        "team2Points": 3
+                    }
+                },
+                {
+                    "court1": {
+                        "team1": {
+                            "player1Index": 1,
+                            "player2Index": 2
+                        },
+                        "team2": {
+                            "player1Index": 3,
+                            "player2Index": 0
+                        },
+                        "team1Points": 2,
+                        "team2Points": 9
+                    }
+                },
+                {
+                    "court1": {
+                        "team1": {
+                            "player1Index": 1,
+                            "player2Index": 2
+                        },
+                        "team2": {
+                            "player1Index": 0,
+                            "player2Index": 3
+                        }
+                    }
+                }
+            ],
+            "players": [
+                {
+                    "playerName": "Jørgen",
+                    "roundsPlayed": 2,
+                    "pointsWon": 12,
+                    "pointsLost": 10,
+                    "wins": 1,
+                    "losses": 1,
+                    "winratePercentage": 50,
+                    "pointGapArray": [
+                        -5,
+                        7
+                    ],
+                    "absPointGapArray": [
+                        5,
+                        7
+                    ],
+                    "averagePointGap": 1,
+                    "averageAbsPointGap": 6
+                },
+                {
+                    "playerName": "Sander",
+                    "roundsPlayed": 2,
+                    "pointsWon": 5,
+                    "pointsLost": 17,
+                    "wins": 0,
+                    "losses": 2,
+                    "winratePercentage": 0,
+                    "pointGapArray": [
+                        -5,
+                        -7
+                    ],
+                    "absPointGapArray": [
+                        5,
+                        7
+                    ],
+                    "averagePointGap": -6,
+                    "averageAbsPointGap": 6
+                },
+                {
+                    "playerName": "Maren",
+                    "roundsPlayed": 2,
+                    "pointsWon": 10,
+                    "pointsLost": 12,
+                    "wins": 1,
+                    "losses": 1,
+                    "winratePercentage": 50,
+                    "pointGapArray": [
+                        5,
+                        -7
+                    ],
+                    "absPointGapArray": [
+                        5,
+                        7
+                    ],
+                    "averagePointGap": -1,
+                    "averageAbsPointGap": 6
+                },
+                {
+                    "playerName": "Benjamin",
+                    "roundsPlayed": 2,
+                    "pointsWon": 17,
+                    "pointsLost": 5,
+                    "wins": 2,
+                    "losses": 0,
+                    "winratePercentage": 100,
+                    "pointGapArray": [
+                        5,
+                        7
+                    ],
+                    "absPointGapArray": [
+                        5,
+                        7
+                    ],
+                    "averagePointGap": 6,
+                    "averageAbsPointGap": 6
+                }
+            ],
+            "rankingByIndex": [
+                [
+                    3
+                ],
+                [
+                    0
+                ],
+                [
+                    2
+                ],
+                [
+                    1
+                ]
+            ]
+        }
     }
 }

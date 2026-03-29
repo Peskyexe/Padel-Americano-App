@@ -14,8 +14,8 @@ const match = await loadMatch(hostUserId, matchId);
 
 const totalCourts = match.creationData.courts;
 const matchState = {
-    totalRounds: 0,
-    activeRoundIndex: 0
+    totalRounds: Math.max(match.matchData.rounds.length - 1, 0),
+    activeRoundIndex: Math.max(match.matchData.rounds.length - 1, 0)
 };
 
 export { totalCourts, matchState, match };
