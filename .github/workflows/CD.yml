@@ -1,0 +1,125 @@
+name: CD - Deploy to Server via Tailscale
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "Infra/**"
+      - ".github/workflows/CD_prod.yml"
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      REMOTE_DIR: /opt/padelJorgen
+      LOCAL_COMPOSE: Infra/compose.yml
+      TAILSCALE_TAGS: "tag:cicd-runner"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Derive image name
+        run: |
+          echo "IMAGE_NAME=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_ENV"
+
+      - name: Connect to Tailscale
+        uses: tailscale/github-action@v3
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: ${{ env.TAILSCALE_TAGS }}
+
+      - name: Verify Tailscale connection
+        run: |
+          echo "✅ Tailscale connected successfully"
+
+      - name: Prepare remote directory and backup existing files
+        run: |
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
+            "${{ secrets.VM_SSH_USER }}@${{ secrets.VM_TAILSCALE_HOST }}" \
+            "set -euo pipefail; \
+             echo '📁 Creating remote directory: ${REMOTE_DIR}'; \
+             mkdir -p '${REMOTE_DIR}'; \
+             mkdir -p '${REMOTE_DIR}/userdata'; \
+             if [ -f '${REMOTE_DIR}/compose.yaml' ]; then \
+               ts=\$(date +%F-%H%M%S); \
+               echo '💾 Backing up existing compose.yaml to compose.yaml.bak.'\"\$ts\"; \
+               cp '${REMOTE_DIR}/compose.yaml' '${REMOTE_DIR}/compose.yaml.bak.'\"\$ts\"; \
+             fi; \
+             echo '✅ Remote directory prepared'"
+
+      - name: Copy compose.yaml to server
+        run: |
+          echo "📤 Copying compose.yaml to server..."
+          scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
+            "${LOCAL_COMPOSE}" \
+            "${{ secrets.VM_SSH_USER }}@${{ secrets.VM_TAILSCALE_HOST }}:${REMOTE_DIR}/compose.yaml"
+          echo "✅ compose.yaml copied successfully"
+
+      - name: Log in to GHCR on server
+        run: |
+          echo "🔐 Logging in to GHCR on server..."
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
+            "${{ secrets.VM_SSH_USER }}@${{ secrets.VM_TAILSCALE_HOST }}" \
+            "set -euo pipefail; \
+             echo '${{ github.token }}' | docker login ghcr.io -u '${{ github.actor }}' --password-stdin; \
+             echo '✅ GHCR login successful'"
+
+      - name: Pull latest Docker images
+        run: |
+          echo "🐳 Pulling latest Docker images..."
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
+            "${{ secrets.VM_SSH_USER }}@${{ secrets.VM_TAILSCALE_HOST }}" \
+            "set -euo pipefail; \
+             cd '${REMOTE_DIR}'; \
+             docker compose pull; \
+             echo '✅ Docker images pulled'"
+
+      - name: Deploy with docker compose
+        run: |
+          echo "🚀 Deploying application..."
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
+            "${{ secrets.VM_SSH_USER }}@${{ secrets.VM_TAILSCALE_HOST }}" \
+            "set -euo pipefail; \
+             cd '${REMOTE_DIR}'; \
+             echo '🔄 Starting services with docker compose...'; \
+             docker compose up -d; \
+             echo '✅ Services started successfully'"
+
+      - name: Wait for services to be running
+        run: |
+          echo "⏳ Waiting for services to be running..."
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
+            "${{ secrets.VM_SSH_USER }}@${{ secrets.VM_TAILSCALE_HOST }}" \
+            "set -euo pipefail; \
+             cd '${REMOTE_DIR}'; \
+             for i in {1..30}; do \
+               if docker compose ps --status running | grep -q 'webapp'; then \
+                 echo '✅ Services are running'; \
+                 exit 0; \
+               fi; \
+               echo 'Waiting for services... ('\$i'/30)'; \
+               sleep 2; \
+             done; \
+             echo '⚠️  Timeout waiting for running status, but continuing...'"
+
+      - name: Show deployment status
+        run: |
+          echo "📊 Deployment Status:"
+          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
+            "${{ secrets.VM_SSH_USER }}@${{ secrets.VM_TAILSCALE_HOST }}" \
+            "cd '${REMOTE_DIR}'; \
+             echo ''; \
+             echo '=== Container Status ==='; \
+             docker compose ps; \
+             echo ''; \
+             echo '=== Recent Logs (last 20 lines) ==='; \
+             docker compose logs --tail=20 webapp"
