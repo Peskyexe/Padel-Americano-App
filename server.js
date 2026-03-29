@@ -12,6 +12,10 @@ app.get("/healthz", (request, response) => {
     response.status(200).json({ status: "ok" });
 });
 
+app.get("/", (request, response) => {
+    response.redirect("/match-creation");
+});
+
 
 // Rute for "match creation" siden
 app.get("/match-creation", async (request, response) => {
@@ -96,5 +100,5 @@ app.get("/round", async (request, response) => {
 
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log("Server running on http://localhost:3000/match_creation. To stop the server, press Ctrl + C");
+    console.log("Server running on http://localhost:3000/match-creation. To stop the server, press Ctrl + C");
 });
