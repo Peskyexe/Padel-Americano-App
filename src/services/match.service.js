@@ -3,8 +3,7 @@ const { readFile, writeFile, mkdir } = require("fs").promises;
 
 
 exports.saveMatch = async (match, userId, matchId) => {
-    await saveMatch(match, userId, matchId);xzw2112q
-    wkjfdsa
+    await saveMatch(match, userId, matchId);
 }
 
 exports.getMatch = async (userId, matchId) => {
