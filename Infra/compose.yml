@@ -1,0 +1,39 @@
+networks:
+  internal_internal:
+    external: true
+  padel_internal:
+    driver: bridge
+
+services:
+  webapp:
+    image: ghcr.io/peskyexe/padel-americano-app:latest
+    container_name: padel_americano
+    expose:
+      - "3000"
+    environment:
+      PORT: 3000
+      NODE_ENV: production
+    volumes:
+      - ./userdata:/app/userdata
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"require('http').get('http://127.0.0.1:3000/healthz', (res) => process.exit(res.statusCode === 200 ? 0 : 1)).on('error', () => process.exit(1))\""]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    labels:
+      - "com.centurylinklabs.watchtower.enable=true"
+      - "traefik.enable=true"
+      - "traefik.docker.network=internal_internal"
+      - "traefik.http.routers.padel-americano.rule=Host(`padel.sabusu.no`) && PathPrefix(`/`)"
+      - "traefik.http.routers.padel-americano.entrypoints=web"
+      - "traefik.http.services.padel-americano.loadbalancer.server.port=3000"
+      - "traefik.http.middlewares.padel-security.headers.stsSeconds=31536000"
+      - "traefik.http.middlewares.padel-security.headers.stsIncludeSubdomains=true"
+      - "traefik.http.middlewares.padel-security.headers.stsPreload=true"
+      - "traefik.http.middlewares.padel-security.headers.contentTypeNosniff=true"
+      - "traefik.http.routers.padel-americano.middlewares=padel-security"
+    restart: unless-stopped
+    networks:
+      - internal_internal
+      - padel_internal

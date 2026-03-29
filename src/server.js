@@ -9,6 +9,15 @@ app.use(express.json());
 app.use(express.static(publicPath));
 
 
+app.get("/healthz", (request, response) => {
+    response.status(200).json({ status: "ok" });
+});
+
+app.get("/", (request, response) => {
+    response.redirect("/match-creation");
+});
+
+
 app.get("/match-creation", async (request, response) => {
     response.send( await readFile(path.join(publicPath, "match_creation.html"), "utf8"));
 });
