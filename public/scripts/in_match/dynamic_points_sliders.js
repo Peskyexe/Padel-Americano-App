@@ -24,6 +24,9 @@ function initializeSlider(slider_container, other_slider_container, points_to_pl
 
     slider_element.addEventListener('input', handleSliderChange);
     slider_element.addEventListener('change', handleSliderChange);
+    slider_element.addEventListener('touchstart', handleSliderChange);
+    slider_element.addEventListener('touchmove', handleSliderChange);
+    slider_element.addEventListener('touchend', handleSliderChange);
 }
 
 
